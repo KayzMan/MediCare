@@ -13,36 +13,36 @@ import { center_flexRow } from "./styles.utility";
 const { width } = Dimensions.get("screen");
 
 export const get_common_mainStackOptions = () => {
-  const { Gluten_FontLoaded } = useGlobalContext();
+  const { Ubuntu_FontLoaded } = useGlobalContext();
 
   return {
     animation: "flip",
     headerStyle: {
       backgroundColor: theme.colors.primary,
     },
-    headerTitleStyle: Gluten_FontLoaded && {
-      fontFamily: theme.font.gluten,
+    headerTitleStyle: Ubuntu_FontLoaded && {
+      fontFamily: theme.font.ubuntu,
     },
-    headerTintColor: theme.colors.white,
     // headerTitleAlign: "center",
-    statusBarColor: theme.colors.statusBarTranslucentColor,
-    statusBarStyle: "light",
-    statusBarTranslucent: true,
+    // statusBarColor: theme.colors.statusBarTranslucentColor,
+    // statusBarStyle: "dark",
+    // statusBarTranslucent: false,
+    headerTintColor: theme.colors.white,
     headerShown: false,
     headerShadowVisible: false,
   } as NativeStackNavigationOptions;
 };
 
 export const get_drawer_mainStackOptions = () => {
-  const Gluten_FontLoaded = true;
+  const Ubuntu_FontLoaded = true;
 
   return {
     headerStyle: {
       backgroundColor: theme.colors.primary,
     },
     headerTintColor: theme.colors.white,
-    headerTitleStyle: Gluten_FontLoaded && {
-      fontFamily: theme.font.gluten,
+    headerTitleStyle: Ubuntu_FontLoaded && {
+      fontFamily: theme.font.ubuntu,
     },
   } as DrawerNavigationOptions;
 };

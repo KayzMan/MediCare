@@ -3,6 +3,12 @@ import { PaperProvider, ThemeProvider } from "react-native-paper";
 import { MyGlobalContext } from "./context/MyGlobalContext";
 import { useFonts } from "expo-font";
 
+// 👇 theme
+import { theme } from "./theme";
+
+// 👇 navigators
+import MainNavigator from "./navigation/MainNavigator/MainNavigator";
+
 export default function App() {
   const [Ubuntu_FontLoaded] = useFonts({
     ubuntu: require("./assets/fonts/Ubuntu/Ubuntu-Regular.ttf"),
@@ -16,8 +22,8 @@ export default function App() {
   });
 
   return (
-    <PaperProvider>
-      <ThemeProvider>
+    <PaperProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <MyGlobalContext.Provider value={{ Ubuntu_FontLoaded }}>
           <SafeAreaView style={styles.container}>
             <StatusBar
@@ -25,16 +31,7 @@ export default function App() {
               backgroundColor={"#fff"}
               hidden
             />
-            <Text
-              style={[
-                { fontSize: 25 },
-                Ubuntu_FontLoaded && {
-                  fontFamily: "ubuntu",
-                },
-              ]}
-            >
-              MediCare App!
-            </Text>
+            <MainNavigator />
           </SafeAreaView>
         </MyGlobalContext.Provider>
       </ThemeProvider>
@@ -46,7 +43,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
