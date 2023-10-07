@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../context/MyGlobalContext";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -17,7 +17,10 @@ import {
   common_icon_props,
   common_text_input_props,
 } from "../../../utilities/props.utility";
-import { isExtraExtraSmallDevice } from "../../../utilities/styles.utility";
+import {
+  isExtraExtraSmallDevice,
+  isMediumDeviceOrBigger,
+} from "../../../utilities/styles.utility";
 
 // 👇 models
 import { mainNavigationProp } from "../../../navigation/MainNavigator/mainNavigator.mode";
@@ -75,7 +78,11 @@ export default function ForgotPassword({
         {/* 👇 action button */}
         <ActionButton
           onPress={() => {
-            navigation.navigate("bottomTabsScreen");
+            if (isMediumDeviceOrBigger(theme.sizes.screenWidth)) {
+              navigation.navigate("sideBarScreen");
+            } else {
+              navigation.navigate("bottomTabsScreen");
+            }
           }}
         >
           Forgot Password

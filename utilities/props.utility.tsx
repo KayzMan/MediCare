@@ -42,7 +42,7 @@ export const get_drawer_mainStackOptions = () => {
     },
     headerTintColor: theme.colors.white,
     headerTitleStyle: Ubuntu_FontLoaded && {
-      fontFamily: theme.font.ubuntu,
+      fontFamily: theme.font.ubuntuMedium,
     },
   } as DrawerNavigationOptions;
 };

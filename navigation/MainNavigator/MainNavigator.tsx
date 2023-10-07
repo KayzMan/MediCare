@@ -15,6 +15,7 @@ import Login from "../../screens/Registration/Login/Login";
 import SignUp from "../../screens/Registration/SignUp/SignUp";
 import ForgotPassword from "../../screens/Registration/ForgotPassword/ForgotPassword";
 import BottomTabs from "../BottomTabs/BottomTabs";
+import SideBar from "../SideBar/SideBar";
 
 export default function MainNavigator() {
   return (
@@ -24,8 +25,8 @@ export default function MainNavigator() {
           name="onBoardingScreen"
           component={OnBoarding}
           options={{
-            title: "OnBoarding | MediCare",
-            headerTitle: "OnBoarding | MediCare",
+            title: "Welcome | MediCare",
+            headerTitle: "Welcome | MediCare",
           }}
         />
 
@@ -62,6 +63,15 @@ export default function MainNavigator() {
           options={{
             title: "Bottom Tabs | MediCare",
             headerTitle: "Bottom Tabs | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="sideBarScreen"
+          component={SideBar}
+          options={{
+            title: "Home | MediCare",
+            headerTitle: "Home | MediCare",
           }}
         />
       </Stack.Navigator>

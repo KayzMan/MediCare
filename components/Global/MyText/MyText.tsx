@@ -21,10 +21,10 @@ export default function MyText({
     <Text
       {...props}
       style={[
-        { color: color ?? "black" },
         Ubuntu_FontLoaded && {
           fontFamily: fontWeight ? theme.font[fontWeight] : theme.font.ubuntu,
         },
+        { color: color ?? "black" },
         style,
       ]}
     >
