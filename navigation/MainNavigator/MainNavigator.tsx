@@ -14,6 +14,7 @@ import OnBoarding from "../../screens/OnBoarding/OnBoarding";
 import Login from "../../screens/Registration/Login/Login";
 import SignUp from "../../screens/Registration/SignUp/SignUp";
 import ForgotPassword from "../../screens/Registration/ForgotPassword/ForgotPassword";
+import BottomTabs from "../BottomTabs/BottomTabs";
 
 export default function MainNavigator() {
   return (
@@ -52,6 +53,15 @@ export default function MainNavigator() {
           options={{
             title: "Forgot Password | MediCare",
             headerTitle: "Forgot Password | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="bottomTabsScreen"
+          component={BottomTabs}
+          options={{
+            title: "Bottom Tabs | MediCare",
+            headerTitle: "Bottom Tabs | MediCare",
           }}
         />
       </Stack.Navigator>

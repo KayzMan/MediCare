@@ -132,7 +132,13 @@ export default function SignUp({
         </MyText>
 
         {/* 👇 action button */}
-        <ActionButton onPress={() => {}}>Create an Account</ActionButton>
+        <ActionButton
+          onPress={() => {
+            navigation.navigate("bottomTabsScreen");
+          }}
+        >
+          Create an Account
+        </ActionButton>
 
         {/* 👇 label  */}
         <MyText

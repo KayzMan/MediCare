@@ -73,7 +73,13 @@ export default function ForgotPassword({
         </View>
 
         {/* 👇 action button */}
-        <ActionButton onPress={() => {}}>Forgot Password</ActionButton>
+        <ActionButton
+          onPress={() => {
+            navigation.navigate("bottomTabsScreen");
+          }}
+        >
+          Forgot Password
+        </ActionButton>
 
         {/* 👇 label  */}
         <MyText

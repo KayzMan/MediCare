@@ -108,7 +108,13 @@ export default function Login({
         </MyText>
 
         {/* 👇 action button */}
-        <ActionButton onPress={() => {}}>LOG IN</ActionButton>
+        <ActionButton
+          onPress={() => {
+            navigation.navigate("bottomTabsScreen");
+          }}
+        >
+          LOG IN
+        </ActionButton>
 
         {/* 👇 label  */}
         <MyText
