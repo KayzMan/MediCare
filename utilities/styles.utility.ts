@@ -66,12 +66,14 @@ export const calculateDimension = (percentage: number, base: number) => {
 
 /**
  * calculateImageDimension
- * @param width - number e.g 300
- * @param height - number e.g 300
- * @param parentWidth - number e.g 1280
- * @param parentHeight - number e.g 800
+ * Resize an image while maintaining the aspect ration of the image.
+ * @author Ngoni Katsidzira
+ * @param width - original width of the image e.g 300
+ * @param height - original height of the image e.g 300
+ * @param parentWidth - width of the image container. Defaults to screen width.
+ * @param parentHeight - height of the image container. Defaults to screen height
  * @param reduceBy - number to subtract from both the width and height e.g 10,
- * @returns an object with new dimensions resized  according to parent width and height.
+ * @returns an object of { width, height } with new dimensions resized  according to parent width and height.
  */
 export const calculateImageDimension = (
   width: number,

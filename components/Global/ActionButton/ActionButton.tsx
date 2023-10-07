@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { useGlobalContext } from "../../../context/MyGlobalContext";
 import React from "react";
 import { ButtonProps, Button } from "react-native-paper";
 
@@ -15,10 +15,18 @@ export default function ActionButton({
   rippleColor,
   ...props
 }: ButtonProps) {
+  const { Ubuntu_FontLoaded } = useGlobalContext();
+
   return (
     <Button
       style={[actionButtonStyles.button, style]}
-      labelStyle={[actionButtonStyles.buttonText, labelStyle]}
+      labelStyle={[
+        actionButtonStyles.buttonText,
+        Ubuntu_FontLoaded && {
+          fontFamily: theme.font.ubuntuMedium,
+        },
+        labelStyle,
+      ]}
       rippleColor={rippleColor ?? theme.colors.primary_faded}
       {...props}
     >

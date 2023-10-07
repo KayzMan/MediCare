@@ -10,7 +10,7 @@ import { NavigationProp } from "@react-navigation/native";
 import { theme } from "../../../theme";
 
 // 👇 styles
-import { loginStyles } from "./login.styles";
+import { forgotPasswordStyles } from "./forgotPassword.styles";
 
 // 👇 utilities
 import {
@@ -27,7 +27,7 @@ import ContainerView from "../../../components/Global/Container/ContainerView";
 import MyText from "../../../components/Global/MyText/MyText";
 import ActionButton from "../../../components/Global/ActionButton/ActionButton";
 
-export default function Login({
+export default function ForgotPassword({
   navigation,
 }: {
   navigation: NavigationProp<mainNavigationProp>;
@@ -37,18 +37,18 @@ export default function Login({
 
   return (
     <ContainerView>
-      <View style={loginStyles.container}>
+      <View style={forgotPasswordStyles.container}>
         {/* 👇 top image */}
         <Avatar
-          source={require("../../../assets/images/a_doctors_notebook.png")}
-          avatarStyle={loginStyles.avatar}
-          containerStyle={loginStyles.avatarContainer}
+          source={require("../../../assets/images/black_girl_with_a_laptop.png")}
+          avatarStyle={forgotPasswordStyles.avatar}
+          containerStyle={forgotPasswordStyles.avatarContainer}
         />
 
         {/* 👇 text input container */}
-        <View style={loginStyles.textInputsContainer}>
+        <View style={forgotPasswordStyles.textInputsContainer}>
           {/* 👇 text input */}
-          <View style={loginStyles.textInputWrapper}>
+          <View style={forgotPasswordStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
               name="email-outline"
@@ -61,59 +61,24 @@ export default function Login({
 
             <TextInput
               {...common_text_input_props}
-              placeholder="Email Address"
+              placeholder="Email Address "
               placeholderTextColor={theme.colors.primary}
-              style={loginStyles.textInput}
+              style={forgotPasswordStyles.textInput}
               contentStyle={[
-                loginStyles.textInputContent,
-                Ubuntu_FontLoaded && { fontFamily: theme.font.ubuntu },
-              ]}
-            />
-          </View>
-
-          {/* 👇 text input */}
-          <View style={loginStyles.textInputWrapper}>
-            <MaterialCommunityIcons
-              {...common_icon_props}
-              name="lock-outline"
-              size={
-                isExtraExtraSmallDevice(theme.sizes.screenWidth)
-                  ? iconSize
-                  : theme.sizes.icon
-              }
-            />
-
-            <TextInput
-              {...common_text_input_props}
-              placeholder="Password"
-              placeholderTextColor={theme.colors.primary}
-              style={loginStyles.textInput}
-              secureTextEntry={true}
-              contentStyle={[
-                loginStyles.textInputContent,
+                forgotPasswordStyles.textInputContent,
                 Ubuntu_FontLoaded && { fontFamily: theme.font.ubuntu },
               ]}
             />
           </View>
         </View>
 
-        {/* 👇 label */}
-        <MyText
-          style={[loginStyles.formLabel, { alignSelf: "flex-end" }]}
-          onPress={() => {
-            navigation.navigate("forgotPasswordScreen");
-          }}
-        >
-          Forgot Password?
-        </MyText>
-
         {/* 👇 action button */}
-        <ActionButton onPress={() => {}}>LOG IN</ActionButton>
+        <ActionButton onPress={() => {}}>Forgot Password</ActionButton>
 
         {/* 👇 label  */}
         <MyText
           style={[
-            loginStyles.formLabel,
+            forgotPasswordStyles.formLabel,
             { alignSelf: "center", textDecorationLine: "underline" },
           ]}
           onPress={() => {

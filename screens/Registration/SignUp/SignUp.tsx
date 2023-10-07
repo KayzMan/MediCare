@@ -51,7 +51,7 @@ export default function SignUp({
           <View style={signUpStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
-              name="account"
+              name="account-outline"
               size={
                 isExtraExtraSmallDevice(theme.sizes.screenWidth)
                   ? iconSize
@@ -75,7 +75,7 @@ export default function SignUp({
           <View style={signUpStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
-              name="email"
+              name="email-outline"
               size={
                 isExtraExtraSmallDevice(theme.sizes.screenWidth)
                   ? iconSize
@@ -99,7 +99,7 @@ export default function SignUp({
           <View style={signUpStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
-              name="lock"
+              name="lock-outline"
               size={
                 isExtraExtraSmallDevice(theme.sizes.screenWidth)
                   ? iconSize
@@ -119,31 +119,33 @@ export default function SignUp({
               ]}
             />
           </View>
-
-          {/* 👇 label */}
-          <MyText
-            style={[signUpStyles.formLabel, { alignSelf: "flex-end" }]}
-            onPress={() => {}}
-          >
-            Forgot Password?
-          </MyText>
-
-          {/* 👇 action button */}
-          <ActionButton onPress={() => {}}>Create an Account</ActionButton>
-
-          {/* 👇 label  */}
-          <MyText
-            style={[
-              signUpStyles.formLabel,
-              { alignSelf: "center", textDecorationLine: "underline" },
-            ]}
-            onPress={() => {
-              navigation.navigate("loginScreen");
-            }}
-          >
-            I already have an account.
-          </MyText>
         </View>
+
+        {/* 👇 label */}
+        <MyText
+          style={[signUpStyles.formLabel, { alignSelf: "flex-end" }]}
+          onPress={() => {
+            navigation.navigate("forgotPasswordScreen");
+          }}
+        >
+          Forgot Password?
+        </MyText>
+
+        {/* 👇 action button */}
+        <ActionButton onPress={() => {}}>Create an Account</ActionButton>
+
+        {/* 👇 label  */}
+        <MyText
+          style={[
+            signUpStyles.formLabel,
+            { alignSelf: "center", textDecorationLine: "underline" },
+          ]}
+          onPress={() => {
+            navigation.navigate("loginScreen");
+          }}
+        >
+          I already have an account.
+        </MyText>
       </View>
     </ContainerView>
   );
