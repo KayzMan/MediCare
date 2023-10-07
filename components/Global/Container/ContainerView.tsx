@@ -1,4 +1,4 @@
-import { ScrollView, ScrollViewProps } from "react-native";
+import { Platform, ScrollView, ScrollViewProps } from "react-native";
 import React from "react";
 
 // 👇 theme
@@ -14,8 +14,8 @@ export default function ContainerView({
 }: ScrollViewProps) {
   return (
     <ScrollView
-      showsHorizontalScrollIndicator={false}
-      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={Platform.OS === "web"}
+      showsVerticalScrollIndicator={Platform.OS === "web"}
       style={[containerViewStyles.container, style]}
       {...props}
     >

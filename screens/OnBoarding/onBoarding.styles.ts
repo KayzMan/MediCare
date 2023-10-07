@@ -13,16 +13,15 @@ import {
 
 const { width: imageWidth, height: imageHeight } = calculateImageDimension(
   368,
-  329,
-  theme.sizes.screenWidth,
-  theme.sizes.screenWidth
+  329
 );
 const { width: biggerImageWidth, height: biggerImageHeight } =
   calculateImageDimension(
     368,
     329,
     theme.sizes.maxMobileSize,
-    theme.sizes.screenWidth
+    theme.sizes.screenWidth,
+    100
   );
 
 export const onBoardingStyles = StyleSheet.create({
@@ -45,6 +44,9 @@ export const onBoardingStyles = StyleSheet.create({
     fontSize: isExtraExtraSmallDevice(theme.sizes.screenWidth)
       ? theme.fonts.headlineMedium.fontSize
       : theme.fonts.headlineLarge.fontSize,
+    // textAlign: isLargerThanMobileSize(theme.sizes.screenWidth)
+    //   ? "center"
+    //   : "left",
   },
   avatar: {},
   avatarContainer: {
