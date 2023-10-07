@@ -1,8 +1,11 @@
-import { PixelRatio } from "react-native";
+import { Dimensions, PixelRatio } from "react-native";
 import { DefaultTheme, MD3Colors, MD2Colors } from "react-native-paper";
+
+const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 
 interface sizesType {
   appPadding: number;
+  appMargin: number;
   icon: number;
   radius: number;
   title_fontSize: number;
@@ -21,6 +24,7 @@ interface sizesType {
   mediumDevice: number;
   smallDevice: number;
   extraSmallDevice: number;
+  extraExtraSmallDevice: number;
 
   smallButtonHeight: number;
   smallButtonHPadding: number;
@@ -28,6 +32,10 @@ interface sizesType {
   mediumButtonHPadding: number;
   largeButtonHeight: number;
   largeButtonHPadding: number;
+
+  screenWidth: number;
+  screenHeight: number;
+  maxMobileSize: number;
 
   fontWeight_bold?:
     | "700"
@@ -73,7 +81,8 @@ interface sizesType {
 export const theme = {
   ...DefaultTheme,
   sizes: {
-    appPadding: 10,
+    appPadding: 20,
+    appMargin: 20,
     icon: 25,
     radius: 5,
     title_fontSize: PixelRatio.getFontScale() * 20 * 1.2,
@@ -92,6 +101,7 @@ export const theme = {
     mediumDevice: 991.98,
     smallDevice: 767.98,
     extraSmallDevice: 575.98,
+    extraExtraSmallDevice: 350,
 
     smallButtonHeight: 40,
     smallButtonHPadding: 20,
@@ -99,6 +109,10 @@ export const theme = {
     mediumButtonHPadding: 28,
     largeButtonHeight: 56,
     largeButtonHPadding: 36,
+
+    maxMobileSize: 500,
+    screenHeight,
+    screenWidth,
 
     fontWeight_bold: "700",
     fontWeight_medium: "400",
@@ -108,9 +122,12 @@ export const theme = {
     ...DefaultTheme.colors,
     ...MD3Colors,
     ...MD2Colors,
-    primary: "rgb(255, 0, 255)",
-    primary_faded: "rgba(255, 0, 255, 0.15)",
-    primary_variableFade: (opacity: number) => `rgba(255, 0, 255, ${opacity})`,
+    primary: "rgb(110, 168, 156)",
+    primary_faded: "rgba(110, 168, 156, 0.15)",
+    primary_variableFade: (opacity: number) =>
+      `rgba(110, 168, 156, ${opacity})`,
+    pinkAccent_CanCan: "rgb(199, 141, 159)",
+    silver20: "rgba(189, 189, 189, .20)",
     statusBarTranslucentColor: "rgba(0, 0, 0, .5)",
     topTabsLabelInActiveColor: "#ccc",
     topTabsIndicatorColor: "limegreen",
