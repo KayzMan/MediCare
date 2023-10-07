@@ -70,18 +70,23 @@ export const calculateDimension = (percentage: number, base: number) => {
  * @param height - number e.g 300
  * @param parentWidth - number e.g 1280
  * @param parentHeight - number e.g 800
+ * @param reduceBy - number to subtract from both the width and height e.g 10,
  * @returns an object with new dimensions resized  according to parent width and height.
  */
 export const calculateImageDimension = (
   width: number,
   height: number,
-  parentWidth: number,
-  parentHeight: number
+  parentWidth: number = theme.sizes.screenWidth,
+  parentHeight: number = theme.sizes.screenHeight,
+  reduceBy: number = 0
 ): {
   width: number;
   height: number;
 } => {
-  const ratio = Math.min(parentWidth / width, parentHeight / height);
+  const ratio = Math.min(
+    parentWidth / (width + reduceBy),
+    parentHeight / (height + reduceBy)
+  );
   return { width: width * ratio, height: height * ratio };
 };
 

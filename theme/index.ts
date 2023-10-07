@@ -123,7 +123,7 @@ export const theme = {
     ...MD3Colors,
     ...MD2Colors,
     primary: "rgb(110, 168, 156)",
-    primary_faded: "rgba(110, 168, 156, 0.15)",
+    primary_faded: "rgba(110, 168, 156, 0.20)",
     primary_variableFade: (opacity: number) =>
       `rgba(110, 168, 156, ${opacity})`,
     pinkAccent_CanCan: "rgb(199, 141, 159)",

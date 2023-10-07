@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
+import { NavigationProp } from "@react-navigation/native";
 
 // 👇 theme
 import { theme } from "../../theme";
@@ -8,12 +9,19 @@ import { theme } from "../../theme";
 // 👇 styles
 import { onBoardingStyles } from "./onBoarding.styles";
 
+// 👇 models
+import { mainNavigationProp } from "../../navigation/MainNavigator/mainNavigator.mode";
+
 // 👇 components
 import ContainerView from "../../components/Global/Container/ContainerView";
 import MyText from "../../components/Global/MyText/MyText";
-import { Button } from "react-native-paper";
+import ActionButton from "../../components/Global/ActionButton/ActionButton";
 
-export default function OnBoarding() {
+export default function OnBoarding({
+  navigation,
+}: {
+  navigation: NavigationProp<mainNavigationProp>;
+}) {
   return (
     <ContainerView>
       <View style={onBoardingStyles.container}>
@@ -28,24 +36,26 @@ export default function OnBoarding() {
 
         <View style={onBoardingStyles.buttonsWrapper}>
           <View style={onBoardingStyles.buttonsContainer}>
-            <Button
+            <ActionButton
+              onPress={() => {}}
+              rippleColor={theme.colors.primary_faded}
               style={[
-                onBoardingStyles.button,
                 { backgroundColor: theme.colors.white },
+                onBoardingStyles.button,
               ]}
-              labelStyle={[
-                onBoardingStyles.buttonText,
-                { color: theme.colors.primary },
-              ]}
+              labelStyle={{ color: theme.colors.primary }}
             >
               SIGN UP
-            </Button>
-            <Button
-              style={onBoardingStyles.button}
-              labelStyle={onBoardingStyles.buttonText}
+            </ActionButton>
+            <ActionButton
+              onPress={() => {
+                navigation.navigate("loginScreen");
+              }}
+              style={[onBoardingStyles.button]}
+              rippleColor={theme.colors.primary_faded}
             >
               LOG IN
-            </Button>
+            </ActionButton>
           </View>
         </View>
       </View>

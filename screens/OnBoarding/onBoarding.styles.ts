@@ -71,18 +71,9 @@ export const onBoardingStyles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: theme.colors.primary,
-    borderRadius: theme.sizes.radius,
-    height: isExtraExtraSmallDevice(theme.sizes.screenWidth)
-      ? theme.sizes.smallButtonHeight
-      : theme.sizes.mediumButtonHeight,
     marginHorizontal: isExtraExtraSmallDevice(theme.sizes.screenWidth)
       ? theme.sizes.appMargin * 0.5
       : theme.sizes.appMargin,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  buttonText: {
-    color: theme.colors.white,
+    marginVertical: 0,
   },
 });
