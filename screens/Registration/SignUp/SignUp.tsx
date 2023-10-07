@@ -10,7 +10,7 @@ import { NavigationProp } from "@react-navigation/native";
 import { theme } from "../../../theme";
 
 // 👇 styles
-import { loginStyles } from "./login.styles";
+import { signUpStyles } from "./signUp.styles";
 
 // 👇 utilities
 import {
@@ -27,7 +27,7 @@ import ContainerView from "../../../components/Global/Container/ContainerView";
 import MyText from "../../../components/Global/MyText/MyText";
 import ActionButton from "../../../components/Global/ActionButton/ActionButton";
 
-export default function Login({
+export default function SignUp({
   navigation,
 }: {
   navigation: NavigationProp<mainNavigationProp>;
@@ -37,18 +37,42 @@ export default function Login({
 
   return (
     <ContainerView>
-      <View style={loginStyles.container}>
+      <View style={signUpStyles.container}>
         {/* 👇 top image */}
         <Avatar
-          source={require("../../../assets/images/a_doctors_notebook.png")}
-          avatarStyle={loginStyles.avatar}
-          containerStyle={loginStyles.avatarContainer}
+          source={require("../../../assets/images/black_doctor_writing_something.png")}
+          avatarStyle={signUpStyles.avatar}
+          containerStyle={signUpStyles.avatarContainer}
         />
 
         {/* 👇 text input container */}
-        <View style={loginStyles.textInputsContainer}>
+        <View style={signUpStyles.textInputsContainer}>
           {/* 👇 text input */}
-          <View style={loginStyles.textInputWrapper}>
+          <View style={signUpStyles.textInputWrapper}>
+            <MaterialCommunityIcons
+              {...common_icon_props}
+              name="account"
+              size={
+                isExtraExtraSmallDevice(theme.sizes.screenWidth)
+                  ? iconSize
+                  : theme.sizes.icon
+              }
+            />
+
+            <TextInput
+              {...common_text_input_props}
+              placeholder="Name "
+              placeholderTextColor={theme.colors.primary}
+              style={signUpStyles.textInput}
+              contentStyle={[
+                signUpStyles.textInputContent,
+                Ubuntu_FontLoaded && { fontFamily: theme.font.ubuntu },
+              ]}
+            />
+          </View>
+
+          {/* 👇 text input */}
+          <View style={signUpStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
               name="email"
@@ -61,18 +85,18 @@ export default function Login({
 
             <TextInput
               {...common_text_input_props}
-              placeholder="Email Address"
+              placeholder="Email Address "
               placeholderTextColor={theme.colors.primary}
-              style={loginStyles.textInput}
+              style={signUpStyles.textInput}
               contentStyle={[
-                loginStyles.textInputContent,
+                signUpStyles.textInputContent,
                 Ubuntu_FontLoaded && { fontFamily: theme.font.ubuntu },
               ]}
             />
           </View>
 
           {/* 👇 text input */}
-          <View style={loginStyles.textInputWrapper}>
+          <View style={signUpStyles.textInputWrapper}>
             <MaterialCommunityIcons
               {...common_icon_props}
               name="lock"
@@ -85,12 +109,12 @@ export default function Login({
 
             <TextInput
               {...common_text_input_props}
-              placeholder="Password"
+              placeholder="Password "
               placeholderTextColor={theme.colors.primary}
-              style={loginStyles.textInput}
+              style={signUpStyles.textInput}
               secureTextEntry={true}
               contentStyle={[
-                loginStyles.textInputContent,
+                signUpStyles.textInputContent,
                 Ubuntu_FontLoaded && { fontFamily: theme.font.ubuntu },
               ]}
             />
@@ -98,26 +122,26 @@ export default function Login({
 
           {/* 👇 label */}
           <MyText
-            style={[loginStyles.formLabel, { alignSelf: "flex-end" }]}
+            style={[signUpStyles.formLabel, { alignSelf: "flex-end" }]}
             onPress={() => {}}
           >
             Forgot Password?
           </MyText>
 
           {/* 👇 action button */}
-          <ActionButton onPress={() => {}}>LOG IN</ActionButton>
+          <ActionButton onPress={() => {}}>Create an Account</ActionButton>
 
           {/* 👇 label  */}
           <MyText
             style={[
-              loginStyles.formLabel,
+              signUpStyles.formLabel,
               { alignSelf: "center", textDecorationLine: "underline" },
             ]}
             onPress={() => {
-              navigation.navigate("signUpScreen");
+              navigation.navigate("loginScreen");
             }}
           >
-            I don't have an account.
+            I already have an account.
           </MyText>
         </View>
       </View>

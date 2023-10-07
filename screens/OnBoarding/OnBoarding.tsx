@@ -37,7 +37,9 @@ export default function OnBoarding({
         <View style={onBoardingStyles.buttonsWrapper}>
           <View style={onBoardingStyles.buttonsContainer}>
             <ActionButton
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate("signUpScreen");
+              }}
               rippleColor={theme.colors.primary_faded}
               style={[
                 { backgroundColor: theme.colors.white },
@@ -47,6 +49,7 @@ export default function OnBoarding({
             >
               SIGN UP
             </ActionButton>
+
             <ActionButton
               onPress={() => {
                 navigation.navigate("loginScreen");

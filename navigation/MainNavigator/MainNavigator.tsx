@@ -12,6 +12,7 @@ import { get_common_mainStackOptions } from "../../utilities/props.utility";
 // 👇 screens
 import OnBoarding from "../../screens/OnBoarding/OnBoarding";
 import Login from "../../screens/Registration/Login/Login";
+import SignUp from "../../screens/Registration/SignUp/SignUp";
 
 export default function MainNavigator() {
   return (
@@ -32,6 +33,15 @@ export default function MainNavigator() {
           options={{
             title: "Login | MediCare",
             headerTitle: "Login | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="signUpScreen"
+          component={SignUp}
+          options={{
+            title: "SignUp | MediCare",
+            headerTitle: "SignUp | MediCare",
           }}
         />
       </Stack.Navigator>
