@@ -43,6 +43,7 @@ export const sidebarStyles = StyleSheet.create({
   drawerItemLabel: {
     color: theme.colors.grey700,
     marginLeft: theme.sizes.appMargin * 0.5,
+    fontSize: theme.fonts.titleMedium.fontSize,
   },
   topAvatar: {},
   topAvatarContainer: {
