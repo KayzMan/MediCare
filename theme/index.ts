@@ -126,6 +126,7 @@ export const theme = {
     primary_faded: "rgba(110, 168, 156, 0.20)",
     primary_variableFade: (opacity: number) =>
       `rgba(110, 168, 156, ${opacity})`,
+    black20: "rgba(0, 0, 0, 0.20)",
     pinkAccent_CanCan: "rgb(199, 141, 159)",
     silver20: "rgba(189, 189, 189, .20)",
     statusBarTranslucentColor: "rgba(0, 0, 0, .5)",

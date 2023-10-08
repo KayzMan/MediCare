@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../context/MyGlobalContext";
-import { Text } from "react-native";
+import { Text, useWindowDimensions } from "react-native";
 import React from "react";
 
 // 👇 theme
@@ -7,6 +7,12 @@ import { theme } from "../../../theme";
 
 // 👇 models
 import { MYTextProps } from "./myText.model";
+
+// 👇 utilities
+import {
+  isExtraExtraSmallDevice,
+  isLargeDeviceOrBigger,
+} from "../../../utilities/styles.utility";
 
 export default function MyText({
   children,
@@ -16,6 +22,7 @@ export default function MyText({
   ...props
 }: MYTextProps) {
   const { Ubuntu_FontLoaded } = useGlobalContext();
+  const { width } = useWindowDimensions();
 
   return (
     <Text
@@ -24,7 +31,14 @@ export default function MyText({
         Ubuntu_FontLoaded && {
           fontFamily: fontWeight ? theme.font[fontWeight] : theme.font.ubuntu,
         },
-        { color: color ?? "black" },
+        {
+          color: color ?? "black",
+          fontSize: isExtraExtraSmallDevice(width)
+            ? theme.fonts.titleSmall.fontSize
+            : isLargeDeviceOrBigger(width)
+            ? theme.fonts.titleLarge.fontSize
+            : theme.fonts.titleMedium.fontSize,
+        },
         style,
       ]}
     >

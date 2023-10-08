@@ -166,6 +166,7 @@ export default function SideBar() {
       screenOptions={{
         ...get_drawer_mainStackOptions(),
         drawerType: isLargeDeviceOrBigger(width) ? "permanent" : "front",
+        headerShown: isLargeDeviceOrBigger(width) ? false : true,
       }}
       drawerContent={drawerContent}
     >
