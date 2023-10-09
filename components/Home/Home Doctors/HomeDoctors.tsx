@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import React, { useCallback } from "react";
 import { FlashList } from "@shopify/flash-list";
 
@@ -17,11 +17,15 @@ import {
 // 👇 controllers
 import { loadHomeDoctors } from "./homeDoctors.controller";
 
+// 👇 utilities
+import { isLargeDeviceOrBigger } from "../../../utilities/styles.utility";
+
 // 👇 components
-import MyText from "../../Global/MyText/MyText";
 import HomeDoctorItem from "./HomeDoctorItem";
 
 export default function HomeDoctors() {
+  const { width } = useWindowDimensions();
+
   // 👇 doctors renderItem
   const renderItem = useCallback(
     (item: HomeDoctorItemProps) => <HomeDoctorItem {...item.item} />,
@@ -44,6 +48,7 @@ export default function HomeDoctors() {
         keyExtractor={keyExtractor}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        numColumns={isLargeDeviceOrBigger(width) ? 2 : 1}
       />
     </View>
   );

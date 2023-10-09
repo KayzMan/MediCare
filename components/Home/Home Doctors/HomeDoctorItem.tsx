@@ -11,6 +11,9 @@ import { homeDoctorStyles } from "./homeDoctors.styles";
 // 👇 models
 import { HomeDoctorItem as iHomeDoctorItem } from "./homeDoctors.model";
 
+// 👇 utilities
+import { isLargeDeviceOrBigger } from "../../../utilities/styles.utility";
+
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 
@@ -18,11 +21,22 @@ export default function HomeDoctorItem({
   name,
   avatar,
   profession,
-  rating,
   ratingText,
+  rating,
+  id,
 }: iHomeDoctorItem) {
+  const { width } = useWindowDimensions();
+
   return (
-    <View style={homeDoctorStyles.doctorItem}>
+    <View
+      style={[
+        homeDoctorStyles.doctorItem,
+        isLargeDeviceOrBigger(width) && {
+          flex: 1,
+          marginLeft: id % 2 === 0 ? theme.sizes.appMargin : 0,
+        },
+      ]}
+    >
       {/* 👇 left */}
       <Avatar
         source={avatar}
@@ -50,7 +64,7 @@ export default function HomeDoctorItem({
           {/* 👇 rating bar */}
           <AirbnbRating
             count={5}
-            defaultRating={5}
+            defaultRating={rating}
             size={12}
             showRating={false}
           />
