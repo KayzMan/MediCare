@@ -7,17 +7,30 @@ import { theme } from "../../../theme";
 import {
   center_flexRow,
   center_flexRow_spaceApart,
-  isExtraExtraSmallDevice,
+  isLargeDeviceOrBigger,
+  isLargerThanMobileSize,
 } from "../../../utilities/styles.utility";
 
 export const doctorCategoriesStyles = StyleSheet.create({
   container: {
     marginBottom:
       Platform.OS === "web" ? theme.sizes.appMargin * 2 : theme.sizes.appMargin,
+    maxWidth: theme.sizes.maxMobileSize * 1.3,
+    minWidth: isLargerThanMobileSize(theme.sizes.screenWidth)
+      ? isLargeDeviceOrBigger(theme.sizes.screenWidth)
+        ? theme.sizes.maxMobileSize * 2
+        : theme.sizes.maxMobileSize * 1.3
+      : 0,
+    marginHorizontal: isLargerThanMobileSize(theme.sizes.screenWidth)
+      ? "auto"
+      : 0,
   },
   topBar: {
     ...center_flexRow_spaceApart,
     marginBottom: theme.sizes.appMargin,
+    marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
+      ? theme.sizes.appMargin * 2
+      : 0,
   },
   topBar_text: {},
   categoryItem: {
