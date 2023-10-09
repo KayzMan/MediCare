@@ -25,7 +25,7 @@ export const loadHomeDoctors = (): HomeDoctorItem[] => {
       name: "Dr. Joe Taylor",
       profession: "Ophthalmologist",
       rating: 4,
-      ratingText: "3.5",
+      ratingText: "3.5 | 150 Reviews",
     },
   ];
 

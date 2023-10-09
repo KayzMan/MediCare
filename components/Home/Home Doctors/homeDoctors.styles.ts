@@ -16,5 +16,30 @@ export const homeDoctorStyles = StyleSheet.create({
   },
   doctorItem: {
     marginBottom: theme.sizes.appMargin,
+    backgroundColor: theme.colors.silver20,
+    borderRadius: theme.sizes.radius,
+    padding: theme.sizes.appPadding * 0.5,
+    ...center_flexRow,
+  },
+  rightDetail: {
+    marginLeft: theme.sizes.appMargin * 0.5,
+  },
+  rightDetailTop: {
+    marginBottom: theme.sizes.appMargin * 0.25,
+  },
+  rightDetailTopName: {
+    marginBottom: theme.sizes.appMargin * 0.25,
+  },
+  rightDetailTopProfession: {
+    fontSize: theme.fonts.titleSmall.fontSize,
+    color: theme.colors.grey700,
+  },
+  rightDetailBottom: {
+    ...center_flexRow,
+  },
+  ratingDetailBottomRatingText: {
+    marginLeft: theme.sizes.appMargin * 0.5,
+    fontSize: theme.fonts.titleSmall.fontSize,
+    color: theme.colors.grey500,
   },
 });

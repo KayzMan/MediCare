@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import React from "react";
-import { Avatar } from "react-native-elements";
+import { Avatar, AirbnbRating } from "react-native-elements";
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -24,7 +24,42 @@ export default function HomeDoctorItem({
   return (
     <View style={homeDoctorStyles.doctorItem}>
       {/* 👇 left */}
-      <Avatar source={avatar} size={"large"} containerStyle={{}} />
+      <Avatar
+        source={avatar}
+        size={"large"}
+        avatarStyle={{ borderRadius: theme.sizes.radius * 2 }}
+        containerStyle={{ width: 75 }}
+      />
+
+      {/* 👇 right detail */}
+      <View style={homeDoctorStyles.rightDetail}>
+        <View style={homeDoctorStyles.rightDetailTop}>
+          <MyText
+            fontWeight="ubuntuMedium"
+            style={homeDoctorStyles.rightDetailTopName}
+          >
+            {name || "name"}
+          </MyText>
+          <MyText style={homeDoctorStyles.rightDetailTopProfession}>
+            {profession || "profession"}
+          </MyText>
+        </View>
+
+        {/* 👇 rating */}
+        <View style={homeDoctorStyles.rightDetailBottom}>
+          {/* 👇 rating bar */}
+          <AirbnbRating
+            count={5}
+            defaultRating={5}
+            size={12}
+            showRating={false}
+          />
+
+          <MyText style={homeDoctorStyles.ratingDetailBottomRatingText}>
+            {ratingText || "rating"}
+          </MyText>
+        </View>
+      </View>
     </View>
   );
 }
