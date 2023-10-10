@@ -91,7 +91,7 @@ export default function Top() {
           {
             marginTop: isLargeDeviceOrBigger(width)
               ? theme.sizes.appMargin * 2
-              : theme.sizes.appMargin,
+              : theme.sizes.appMargin * 1.2,
           },
         ]}
       >

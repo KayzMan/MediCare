@@ -18,7 +18,11 @@ import {
 import { loadHomeDoctors } from "./homeDoctors.controller";
 
 // 👇 utilities
-import { isLargeDeviceOrBigger } from "../../../utilities/styles.utility";
+import {
+  isGreaterThanExtraLarge,
+  isLargeDeviceOrBigger,
+  isSmallDeviceOrBigger,
+} from "../../../utilities/styles.utility";
 
 // 👇 components
 import HomeDoctorItem from "./HomeDoctorItem";
@@ -40,7 +44,25 @@ export default function HomeDoctors() {
   );
 
   return (
-    <View style={homeDoctorStyles.container}>
+    <View
+      style={[
+        homeDoctorStyles.container,
+        {
+          marginTop: isLargeDeviceOrBigger(width)
+            ? theme.sizes.appMargin * 2
+            : 0,
+          maxWidth: theme.sizes.smallDevice,
+          minWidth: isSmallDeviceOrBigger(width)
+            ? isGreaterThanExtraLarge(width)
+              ? theme.sizes.mediumDevice
+              : isLargeDeviceOrBigger(width)
+              ? theme.sizes.smallDevice
+              : theme.sizes.smallDevice - 50
+            : 0,
+          marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
+        },
+      ]}
+    >
       <FlashList
         estimatedItemSize={100}
         data={loadHomeDoctors()}

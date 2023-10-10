@@ -16,20 +16,11 @@ export const homeDoctorStyles = StyleSheet.create({
   container: {
     flex: 1,
     minHeight: calculateDimension(30, theme.sizes.screenHeight),
-    maxWidth: theme.sizes.maxMobileSize * 2,
-    minWidth: isLargerThanMobileSize(theme.sizes.screenWidth)
-      ? isLargeDeviceOrBigger(theme.sizes.screenWidth)
-        ? theme.sizes.maxMobileSize * 2
-        : theme.sizes.maxMobileSize * 1.3
-      : 0,
-    marginHorizontal: isLargerThanMobileSize(theme.sizes.screenWidth)
-      ? "auto"
-      : 0,
   },
   doctorItem: {
     marginBottom: theme.sizes.appMargin,
     backgroundColor: theme.colors.silver20,
-    borderRadius: theme.sizes.radius * 2,
+    borderRadius: theme.sizes.radius * 2.5,
     padding: theme.sizes.appPadding * 1,
     ...center_flexRow,
   },
