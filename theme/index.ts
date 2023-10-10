@@ -8,7 +8,10 @@ interface sizesType {
   appMargin: number;
   icon: number;
   radius: number;
-  title_fontSize: number;
+
+  smallFontSize: number;
+  mediumFontSize: number;
+  largeFontSize: number;
 
   touchableOpacity_high?: number;
   touchableOpacity_medium?: number;
@@ -85,7 +88,10 @@ export const theme = {
     appMargin: 20,
     icon: 25,
     radius: 5,
-    title_fontSize: PixelRatio.getFontScale() * 20 * 1.2,
+
+    smallFontSize: 14,
+    mediumFontSize: 16,
+    largeFontSize: 18,
 
     touchableOpacity_high: 0.8,
     touchableOpacity_medium: 0.5,

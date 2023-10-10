@@ -72,8 +72,6 @@ export const topTab_common_options: MaterialTopTabNavigationOptions = {
     elevation: 0,
   },
   tabBarLabelStyle: {
-    // fontFamily: theme.font.PoppinsSemiBold,
-    fontSize: theme.sizes.title_fontSize * 0.6,
     textTransform: "none",
     fontWeight: "bold",
   },
