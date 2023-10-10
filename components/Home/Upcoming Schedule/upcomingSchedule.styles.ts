@@ -34,7 +34,7 @@ export const upcomingScheduleStyles = StyleSheet.create({
   topBarBigText: {},
   topBarSmallText: {
     color: theme.colors.primary,
-    fontSize: theme.fonts.titleSmall.fontSize,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
   scheduleBox: {
     marginTop: theme.sizes.appPadding,
@@ -52,14 +52,13 @@ export const upcomingScheduleStyles = StyleSheet.create({
     marginLeft: theme.sizes.appMargin * 0.5,
   },
   scheduleBoxTopLeftDetailName: {
-    fontSize: theme.fonts.titleSmall.fontSize,
     color: theme.colors.white,
     marginBottom: theme.sizes.appMargin * 0.25,
   },
   scheduleBoxTopLeftDetailProfession: {
-    fontSize: theme.fonts.labelMedium.fontSize,
-    color: theme.colors.white,
+    color: theme.colors.grey100,
     marginBottom: theme.sizes.appMargin * 0.25,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
   scheduleBoxTopRight: {
     backgroundColor: theme.colors.white,
@@ -76,6 +75,6 @@ export const upcomingScheduleStyles = StyleSheet.create({
   scheduleBoxBottomText: {
     color: theme.colors.white,
     marginLeft: theme.sizes.appMargin * 0.5,
-    fontSize: theme.fonts.titleSmall.fontSize,
+    fontSize: theme.sizes.smallFontSize - 1.5,
   },
 });

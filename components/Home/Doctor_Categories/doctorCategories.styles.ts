@@ -42,7 +42,6 @@ export const doctorCategoriesStyles = StyleSheet.create({
     paddingHorizontal: theme.sizes.smallButtonHPadding,
   },
   categoryItemText: {
-    fontSize: theme.fonts.titleSmall.fontSize,
     marginLeft: theme.sizes.appMargin * 0.25,
   },
 });

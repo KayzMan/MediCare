@@ -89,9 +89,9 @@ export const theme = {
     icon: 25,
     radius: 5,
 
-    smallFontSize: 14,
-    mediumFontSize: 16,
-    largeFontSize: 18,
+    smallFontSize: DefaultTheme.fonts.titleSmall.fontSize,
+    mediumFontSize: DefaultTheme.fonts.titleMedium.fontSize,
+    largeFontSize: DefaultTheme.fonts.titleLarge.fontSize,
 
     touchableOpacity_high: 0.8,
     touchableOpacity_medium: 0.5,

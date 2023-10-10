@@ -31,7 +31,10 @@ export default function DoctorCategoryItem({
       />
 
       {/* 👇 name */}
-      <MyText style={doctorCategoriesStyles.categoryItemText}>
+      <MyText
+        fontWeight="ubuntuMedium"
+        style={doctorCategoriesStyles.categoryItemText}
+      >
         {name || "name"}
       </MyText>
     </View>

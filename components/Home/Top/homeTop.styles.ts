@@ -14,7 +14,7 @@ import {
 
 export const homeTopStyles = StyleSheet.create({
   container: {
-    marginBottom: theme.sizes.appMargin,
+    marginBottom: theme.sizes.appMargin * 1.2,
     marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
       ? theme.sizes.appMargin * 2
       : 0,
@@ -37,6 +37,7 @@ export const homeTopStyles = StyleSheet.create({
   topLeftText: {
     textAlign: "center",
     marginBottom: theme.sizes.appMargin * 0.25,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
   topLeftLocationWrapper: {
     alignSelf: "center",
@@ -45,7 +46,14 @@ export const homeTopStyles = StyleSheet.create({
   topLeftLocationWrapperText: {
     marginLeft: theme.sizes.appMargin * 0.25,
   },
-  topRightIcon: {},
+  topRightIcon: {
+    height: 30,
+    width: 30,
+    borderRadius: theme.sizes.radius,
+    backgroundColor: theme.colors.silver20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   textInputWrapper: {
     ...center_flexRow,
     marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
@@ -67,6 +75,7 @@ export const homeTopStyles = StyleSheet.create({
     height: isExtraExtraSmallDevice(theme.sizes.screenWidth)
       ? theme.sizes.smallButtonHeight
       : theme.sizes.mediumButtonHeight,
+    fontSize: theme.sizes.smallFontSize,
   },
   textInputContent: {},
 });

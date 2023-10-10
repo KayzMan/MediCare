@@ -6,6 +6,7 @@ import { theme } from "../../../theme";
 // 👇 utilities
 import {
   center_flexRow,
+  center_flexRow_justifyCenter,
   center_flexRow_spaceApart,
   isLargeDeviceOrBigger,
   isLargerThanMobileSize,
@@ -33,48 +34,49 @@ export const allEvents = StyleSheet.create({
   eventItem: {
     marginBottom: theme.sizes.appMargin * 0.75,
     backgroundColor: theme.colors.silver20,
-    borderRadius: theme.sizes.radius * 1.5,
+    borderRadius: theme.sizes.radius * 2,
     ...center_flexRow_spaceApart,
     paddingHorizontal: theme.sizes.appPadding,
-    height: 100,
+    height: 90,
   },
   eventItemLeft: {
     ...center_flexRow,
   },
   eventItemLeftDateWrapper: {
-    height: 65,
-    width: 65,
+    height: 60,
+    width: 60,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: theme.sizes.radius * 2,
+    borderRadius: theme.sizes.radius,
     borderWidth: 1,
     borderColor: theme.colors.primary,
   },
   eventItemLeftDateDay: {
     color: theme.colors.primary,
     textAlign: "center",
-    marginBottom: theme.sizes.appMargin * 0.25,
-    fontSize: theme.fonts.titleMedium.fontSize,
   },
   eventItemLeftDateMonth: {
     color: theme.colors.primary,
     textAlign: "center",
-    fontSize: theme.fonts.titleMedium.fontSize,
   },
   eventItemLeftDetailWrapper: {
     marginLeft: theme.sizes.appMargin,
   },
   eventItemLeftDetailTitle: {
-    marginBottom: theme.sizes.appMargin * 0.125,
-    fontSize: theme.fonts.titleMedium.fontSize,
+    marginBottom: theme.sizes.appMargin * 0.2,
   },
   eventItemLeftDetailTime: {
-    color: theme.colors.grey700,
-    fontSize: theme.fonts.titleSmall.fontSize,
-    marginBottom: theme.sizes.appMargin * 0.125,
+    marginBottom: theme.sizes.appMargin * 0.2,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
   eventItemLeftDetailDoctorName: {
-    color: theme.colors.grey700,
-    fontSize: theme.fonts.titleSmall.fontSize,
+    fontSize: theme.sizes.smallFontSize - 2,
+  },
+  iconContainer: {
+    height: 30,
+    width: 30,
+    backgroundColor: theme.colors.grey50,
+    borderRadius: theme.sizes.radius * 1000,
+    ...center_flexRow_justifyCenter,
   },
 });

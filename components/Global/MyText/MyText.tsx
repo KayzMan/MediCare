@@ -33,11 +33,12 @@ export default function MyText({
         },
         {
           color: color ?? "black",
-          fontSize: isExtraExtraSmallDevice(width)
-            ? theme.fonts.titleSmall.fontSize
-            : isLargeDeviceOrBigger(width)
-            ? theme.fonts.titleLarge.fontSize
-            : theme.fonts.titleMedium.fontSize,
+          fontSize: theme.sizes.smallFontSize,
+          // fontSize: isExtraExtraSmallDevice(width)
+          //   ? theme.fonts.titleSmall.fontSize
+          //   : isLargeDeviceOrBigger(width)
+          //   ? theme.fonts.titleLarge.fontSize
+          //   : theme.fonts.titleMedium.fontSize,
         },
         style,
       ]}

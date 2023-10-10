@@ -54,10 +54,10 @@ export const homeDoctorStyles = StyleSheet.create({
     marginTop: theme.sizes.appMargin * 0.25,
   },
   ratingDetailBottomRatingText: {
-    fontSize: theme.fonts.titleSmall.fontSize,
-    color: theme.colors.grey500,
+    color: theme.colors.grey700,
     marginTop: isExtraExtraSmallDevice(theme.sizes.screenWidth)
       ? theme.sizes.appMargin * 0.25
       : 0,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
 });

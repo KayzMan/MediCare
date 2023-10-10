@@ -85,11 +85,14 @@ export default function EventItem({
       </View>
 
       {/* 👇 right */}
-      <MaterialCommunityIcons
-        {...common_icon_props}
-        color={theme.colors.grey700}
-        name={completed ? "phone-outline" : "video-outline"}
-      />
+      <View style={allEvents.iconContainer}>
+        <MaterialCommunityIcons
+          {...common_icon_props}
+          color={theme.colors.grey700}
+          size={theme.sizes.icon * 0.8}
+          name={completed ? "phone-outline" : "video-outline"}
+        />
+      </View>
     </View>
   );
 }

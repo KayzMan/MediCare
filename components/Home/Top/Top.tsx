@@ -33,8 +33,7 @@ export default function Top() {
             <MaterialCommunityIcons
               {...common_icon_props}
               name="map-marker"
-              color={theme.colors.black}
-              size={theme.sizes.icon * 0.8}
+              size={theme.sizes.icon * 0.6}
             />
 
             <MyText
@@ -47,12 +46,13 @@ export default function Top() {
         </View>
 
         {/* 👇 top right */}
-        <MaterialCommunityIcons
-          {...common_icon_props}
-          name="bell-badge"
-          color={theme.colors.black}
-          style={homeTopStyles.topRightIcon}
-        />
+        <View style={homeTopStyles.topRightIcon}>
+          <MaterialCommunityIcons
+            {...common_icon_props}
+            name="bell-badge"
+            size={theme.sizes.icon * 0.8}
+          />
+        </View>
       </View>
 
       {/* 👇 search bar */}
@@ -62,7 +62,7 @@ export default function Top() {
         <TextInput
           {...common_text_input_props}
           placeholder="Search a doctor or health issue"
-          placeholderTextColor={theme.colors.grey500}
+          placeholderTextColor={theme.colors.grey600}
           style={homeTopStyles.textInput}
           contentStyle={homeTopStyles.textInputContent}
         />

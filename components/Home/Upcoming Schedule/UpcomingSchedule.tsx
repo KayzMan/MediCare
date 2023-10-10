@@ -67,7 +67,7 @@ export default function UpcomingSchedule() {
             <MaterialCommunityIcons
               {...common_icon_props}
               name="video-outline"
-              size={theme.sizes.icon * 0.8}
+              size={theme.sizes.icon * 0.7}
             />
           </View>
         </View>
@@ -76,7 +76,8 @@ export default function UpcomingSchedule() {
           <MaterialCommunityIcons
             {...common_icon_props}
             name="clock"
-            color={theme.colors.white}
+            color={theme.colors.grey300}
+            size={theme.sizes.icon * 0.8}
           />
 
           <MyText style={upcomingScheduleStyles.scheduleBoxBottomText}>
