@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import React, { useCallback } from "react";
 import { FlashList } from "@shopify/flash-list";
 
@@ -17,11 +17,20 @@ import {
 // 👇 models
 import { iEventItem, iEventItemProps } from "./allEvents.model";
 
+// 👇 utilities
+import {
+  isGreaterThanExtraLarge,
+  isLargeDeviceOrBigger,
+  isSmallDeviceOrBigger,
+} from "../../../utilities/styles.utility";
+
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 import EventItem from "./EventItem";
 
 export default function AllEvents() {
+  const { width } = useWindowDimensions();
+
   // 👇 upcoming events renderItem
   const upcomingEventsRenderItem = useCallback(
     (item: iEventItemProps) => <EventItem {...item.item} />,
@@ -40,7 +49,25 @@ export default function AllEvents() {
   );
 
   return (
-    <View style={allEvents.container}>
+    <View
+      style={[
+        allEvents.container,
+        {
+          marginTop: isLargeDeviceOrBigger(width)
+            ? theme.sizes.appMargin * 2
+            : 0,
+          maxWidth: theme.sizes.smallDevice,
+          minWidth: isSmallDeviceOrBigger(width)
+            ? isGreaterThanExtraLarge(width)
+              ? theme.sizes.mediumDevice
+              : isLargeDeviceOrBigger(width)
+              ? theme.sizes.smallDevice
+              : theme.sizes.smallDevice - 50
+            : 0,
+          marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
+        },
+      ]}
+    >
       <FlashList
         estimatedItemSize={100}
         data={loadUpcomingEvents()}

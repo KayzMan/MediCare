@@ -17,7 +17,7 @@ import AllEvents from "../../components/Events/AllEvents/AllEvents";
 export default function Events() {
   return (
     <ContainerView>
-      <View style={eventsStyles.container}>
+      <View style={[eventsStyles.container]}>
         <TopBar />
         <TopImage />
         <AllEvents />
