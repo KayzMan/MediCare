@@ -1,4 +1,4 @@
-import { View, useWindowDimensions } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
 
@@ -15,8 +15,6 @@ import {
 } from "../../../utilities/styles.utility";
 
 export default function TopImage() {
-  const { width } = useWindowDimensions();
-
   const { width: imageWidth, height: imageHeight } = calculateImageDimension(
     368,
     320,

@@ -7,13 +7,27 @@ import { theme } from "../../../theme";
 import {
   center_flexRow,
   center_flexRow_spaceApart,
+  isLargeDeviceOrBigger,
+  isLargerThanMobileSize,
 } from "../../../utilities/styles.utility";
 
 export const allEvents = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: theme.sizes.appMargin,
     minHeight: theme.sizes.screenHeight - (theme.sizes.screenHeight - 200),
+    marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
+      ? theme.sizes.appMargin * 2
+      : 0,
+    marginBottom: theme.sizes.appMargin,
+    maxWidth: theme.sizes.maxMobileSize * 2,
+    minWidth: isLargerThanMobileSize(theme.sizes.screenWidth)
+      ? isLargeDeviceOrBigger(theme.sizes.screenWidth)
+        ? theme.sizes.maxMobileSize * 2
+        : theme.sizes.maxMobileSize * 1.3
+      : 0,
+    marginHorizontal: isLargerThanMobileSize(theme.sizes.screenWidth)
+      ? "auto"
+      : 0,
   },
   eventItem: {
     marginBottom: theme.sizes.appMargin * 0.75,
