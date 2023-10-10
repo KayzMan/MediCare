@@ -41,8 +41,8 @@ export default function HomeDoctorItem({
       <Avatar
         source={avatar}
         size={"large"}
-        avatarStyle={{ borderRadius: theme.sizes.radius * 2 }}
-        containerStyle={{ width: 90, height: 90 }}
+        avatarStyle={{ borderRadius: theme.sizes.radius }}
+        // containerStyle={{ width: 80, height: 80 }}
       />
 
       {/* 👇 right detail */}

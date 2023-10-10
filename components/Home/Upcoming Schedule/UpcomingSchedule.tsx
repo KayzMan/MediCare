@@ -42,7 +42,7 @@ export default function UpcomingSchedule() {
             <Avatar
               source={require("../../../assets/images/avatars/avatar2.jpg")}
               size={"medium"}
-              avatarStyle={{ borderRadius: theme.sizes.radius * 2 }}
+              avatarStyle={{ borderRadius: theme.sizes.radius }}
             />
 
             <View style={upcomingScheduleStyles.scheduleBoxTopLeftDetail}>

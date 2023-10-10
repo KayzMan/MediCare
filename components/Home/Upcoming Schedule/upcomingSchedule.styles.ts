@@ -39,7 +39,7 @@ export const upcomingScheduleStyles = StyleSheet.create({
   scheduleBox: {
     marginTop: theme.sizes.appPadding,
     backgroundColor: theme.colors.primary,
-    borderRadius: theme.sizes.radius,
+    borderRadius: theme.sizes.radius * 2,
     padding: theme.sizes.appPadding * 0.8,
   },
   scheduleBoxTop: {
