@@ -43,6 +43,8 @@ import {
 export default function SideBar() {
   const { width } = useWindowDimensions();
 
+  console.log("\n\nfont size:", theme.fonts);
+
   // 👇 custom drawer content
   const drawerContent = ({
     descriptors,
@@ -139,7 +141,7 @@ export default function SideBar() {
               style={[
                 sidebarStyles.drawerItemLabel,
                 {
-                  fontSize: theme.fonts.headlineMedium.fontSize,
+                  fontSize: theme.sizes.largeFontSize * 1.2,
                   color: theme.colors.primary,
                 },
               ]}
@@ -148,7 +150,9 @@ export default function SideBar() {
               <MyText
                 fontWeight="ubuntuMedium"
                 color={theme.colors.pinkAccent_CanCan}
-                style={{ fontSize: theme.fonts.headlineMedium.fontSize }}
+                style={{
+                  fontSize: theme.sizes.largeFontSize * 1.2,
+                }}
               >
                 Care
               </MyText>

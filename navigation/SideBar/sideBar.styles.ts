@@ -38,17 +38,18 @@ export const sidebarStyles = StyleSheet.create({
   drawerItemSectionHeader: {
     color: theme.colors.grey700,
     marginLeft: theme.sizes.appMargin * 0.5,
-    fontSize: theme.fonts.titleLarge.fontSize,
+    fontSize: theme.sizes.mediumFontSize,
   },
   drawerItemLabel: {
     color: theme.colors.grey700,
     marginLeft: theme.sizes.appMargin * 0.5,
-    fontSize: theme.fonts.titleMedium.fontSize,
+    fontSize: theme.sizes.smallFontSize,
   },
   topAvatar: {},
   topAvatarContainer: {
     width: imageWidth,
     height: imageHeight,
     left: 20,
+    marginBottom: theme.sizes.appMargin,
   },
 });
