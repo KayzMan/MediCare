@@ -30,20 +30,18 @@ import {
 import ContainerView from "../../components/Global/Container/ContainerView";
 import MyText from "../../components/Global/MyText/MyText";
 
+// 👇 utilities
+import { isLargeDeviceOrBigger } from "../../utilities/styles.utility";
+
 // 👇 screens
 import Home from "../../screens/Home/Home";
 import Events from "../../screens/Events/Events";
 import Chats from "../../screens/Chats/Chats";
 import Profile from "../../screens/Profile/Profile";
-import {
-  isGreaterThanExtraLarge,
-  isLargeDeviceOrBigger,
-} from "../../utilities/styles.utility";
+import BottomTabs from "../BottomTabs/BottomTabs";
 
 export default function SideBar() {
   const { width } = useWindowDimensions();
-
-  console.log("\n\nfont size:", theme.fonts);
 
   // 👇 custom drawer content
   const drawerContent = ({
@@ -164,7 +162,6 @@ export default function SideBar() {
       </ScrollView>
     );
   };
-
   return (
     <Drawer.Navigator
       screenOptions={{

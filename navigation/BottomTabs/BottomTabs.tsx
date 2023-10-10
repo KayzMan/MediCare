@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, useWindowDimensions } from "react-native";
 import {
   createMaterialTopTabNavigator,
   MaterialTopTabBarProps,
@@ -16,15 +16,18 @@ import { bottomTabsStyles } from "./bottomTabs.styles";
 
 // 👇 utilities
 import { common_icon_props } from "../../utilities/props.utility";
+import { isMediumDeviceOrBigger } from "../../utilities/styles.utility";
 
 // 👇 screens
 import Home from "../../screens/Home/Home";
 import Events from "../../screens/Events/Events";
 import Chats from "../../screens/Chats/Chats";
 import Profile from "../../screens/Profile/Profile";
+import SideBar from "../SideBar/SideBar";
 
 export default function BottomTabs() {
   const iconSize = theme.sizes.icon * 1.1;
+  const { width } = useWindowDimensions();
 
   // 👇 get tab icon based on passed in index
   const getTabIcon = useCallback((index: number, focused: boolean) => {
@@ -100,7 +103,9 @@ export default function BottomTabs() {
     return <View style={bottomTabsStyles.tabBar}>{createTabItems()}</View>;
   }, []);
 
-  return (
+  return isMediumDeviceOrBigger(width) ? (
+    <SideBar />
+  ) : (
     <Tab.Navigator tabBar={tabBar} tabBarPosition="bottom">
       <Tab.Screen
         name="homeTopTabScreen"

@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -11,13 +11,38 @@ import { upcomingScheduleStyles } from "./upcomingSchedule.styles";
 
 // 👇 utilities
 import { common_icon_props } from "../../../utilities/props.utility";
+import {
+  isGreaterThanExtraLarge,
+  isLargeDeviceOrBigger,
+  isSmallDeviceOrBigger,
+} from "../../../utilities/styles.utility";
 
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 
 export default function UpcomingSchedule() {
+  const { width } = useWindowDimensions();
+
   return (
-    <View style={upcomingScheduleStyles.container}>
+    <View
+      style={[
+        upcomingScheduleStyles.container,
+        {
+          marginTop: isLargeDeviceOrBigger(width)
+            ? theme.sizes.appMargin * 2
+            : 0,
+          maxWidth: theme.sizes.smallDevice,
+          minWidth: isSmallDeviceOrBigger(width)
+            ? isGreaterThanExtraLarge(width)
+              ? theme.sizes.mediumDevice
+              : isLargeDeviceOrBigger(width)
+              ? theme.sizes.smallDevice
+              : theme.sizes.smallDevice - 50
+            : 0,
+          marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
+        },
+      ]}
+    >
       {/* 👇 top bar */}
       <View style={upcomingScheduleStyles.topBar}>
         <MyText

@@ -14,19 +14,7 @@ import {
 
 export const upcomingScheduleStyles = StyleSheet.create({
   container: {
-    marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
-      ? theme.sizes.appMargin * 2
-      : 0,
     marginBottom: theme.sizes.appMargin,
-    maxWidth: theme.sizes.maxMobileSize * 2,
-    minWidth: isLargerThanMobileSize(theme.sizes.screenWidth)
-      ? isLargeDeviceOrBigger(theme.sizes.screenWidth)
-        ? theme.sizes.maxMobileSize * 2
-        : theme.sizes.maxMobileSize * 1.3
-      : 0,
-    marginHorizontal: isLargerThanMobileSize(theme.sizes.screenWidth)
-      ? "auto"
-      : 0,
   },
   topBar: {
     ...center_flexRow_spaceApart,
