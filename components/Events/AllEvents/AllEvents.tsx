@@ -55,7 +55,7 @@ export default function AllEvents() {
       />
 
       {/* 👇 spacer */}
-      <View style={{ marginVertical: theme.sizes.appMargin * 0.5 }} />
+      <View style={{ marginVertical: theme.sizes.appMargin * 0.25 }} />
 
       <FlashList
         estimatedItemSize={100}

@@ -14,7 +14,8 @@ import {
 export const allEvents = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: theme.sizes.screenHeight - (theme.sizes.screenHeight - 200),
+    // minHeight: theme.sizes.screenHeight - (theme.sizes.screenHeight - 200),
+    minHeight: theme.sizes.screenHeight / 2,
     marginTop: isLargeDeviceOrBigger(theme.sizes.screenWidth)
       ? theme.sizes.appMargin * 2
       : 0,
