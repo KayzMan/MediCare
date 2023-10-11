@@ -7,6 +7,7 @@ export interface iChatItem {
   unReadMessages?: number | undefined;
   lastMessageTime: string;
   avatar: ImageSourcePropType;
+  isOnSideBar?: boolean;
 }
 
 export interface iChatItemProps {

@@ -38,7 +38,6 @@ import Home from "../../screens/Home/Home";
 import Events from "../../screens/Events/Events";
 import Chats from "../../screens/Chats/Chats";
 import Profile from "../../screens/Profile/Profile";
-import BottomTabs from "../BottomTabs/BottomTabs";
 
 export default function SideBar() {
   const { width } = useWindowDimensions();

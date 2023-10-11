@@ -20,13 +20,23 @@ export default function ChatItem({
   message,
   name,
   unReadMessages,
+  isOnSideBar,
 }: iChatItem) {
   return (
-    <View style={allChatsStyles.chatItem}>
+    <View
+      style={[
+        allChatsStyles.chatItem,
+        isOnSideBar && { marginVertical: theme.sizes.appMargin * 0 },
+      ]}
+    >
       {/* 👇 left */}
       <View style={allChatsStyles.chatItemLeft}>
         <View style={allChatsStyles.chatItemAvatarWrapper}>
-          <Avatar source={avatar} size={"large"} rounded />
+          <Avatar
+            source={avatar}
+            size={isOnSideBar ? "medium" : "large"}
+            rounded
+          />
           <View style={allChatsStyles.chatItemAvatarBadge} />
         </View>
 
