@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ScrollView,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { ScrollView, View } from "react-native";
 import {
   DrawerContentComponentProps,
   createDrawerNavigator,
@@ -31,12 +26,11 @@ import ContainerView from "../../Global/Container/ContainerView";
 import MyText from "../../Global/MyText/MyText";
 
 // 👇 screens
-import SideBarChatArea from "./SideBarChatArea/SideBarChatArea";
+import ChatScreen from "../ChatScreen/ChatScreen";
 import ChatItem from "./ChatItem";
+import { common_iOS_web_shadow } from "../../../utilities/styles.utility";
 
 export default function SideBarChats() {
-  const { width } = useWindowDimensions();
-
   // 👇 custom drawer content
   const drawerContent = ({
     descriptors,
@@ -79,6 +73,8 @@ export default function SideBarChats() {
           flex: 1,
           backgroundColor: theme.colors.white,
           width: theme.sizes.extraSmallDevice,
+          ...common_iOS_web_shadow,
+          elevation: 5,
         }}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
@@ -134,8 +130,8 @@ export default function SideBarChats() {
       {loadAllChats().map((_item, index) => {
         return (
           <Drawer.Screen
-            name={`sideBarChatAreDrawerScreen-#${index}`}
-            component={SideBarChatArea}
+            name={`chatScreenDrawerScreen-#${index}`}
+            component={ChatScreen}
           />
         );
       })}
