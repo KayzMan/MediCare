@@ -16,7 +16,7 @@ export const allChatsStyles = StyleSheet.create({
   },
   chatItem: {
     marginBottom: theme.sizes.appMargin * 0.8,
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     borderRadius: theme.sizes.radius * 2.5,
     padding: theme.sizes.appPadding * 0.6,
     ...center_flexRow_spaceApart,

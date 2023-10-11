@@ -22,7 +22,7 @@ export const chatsTopStyles = StyleSheet.create({
     ...center_flexRow,
 
     borderRadius: theme.sizes.radius * 2,
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     paddingHorizontal: theme.sizes.appPadding * 0.5,
     maxWidth: theme.sizes.maxMobileSize * 2,
   },

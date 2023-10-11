@@ -19,7 +19,7 @@ export const homeDoctorStyles = StyleSheet.create({
   },
   doctorItem: {
     marginBottom: theme.sizes.appMargin,
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     borderRadius: theme.sizes.radius * 2.5,
     padding: theme.sizes.appPadding * 1,
     ...center_flexRow,

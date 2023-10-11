@@ -135,6 +135,7 @@ export const theme = {
     black20: "rgba(0, 0, 0, 0.20)",
     pinkAccent_CanCan: "rgb(199, 141, 159)",
     silver20: "rgba(189, 189, 189, .20)",
+    ghostWhite: "rgb(248, 248, 255)",
     statusBarTranslucentColor: "rgba(0, 0, 0, .5)",
     topTabsLabelInActiveColor: "#ccc",
     topTabsIndicatorColor: "limegreen",

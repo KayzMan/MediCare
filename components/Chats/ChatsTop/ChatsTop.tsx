@@ -110,7 +110,7 @@ export default function ChatsTop({
         <TextInput
           {...common_text_input_props}
           placeholder="Search e.g Dr"
-          placeholderTextColor={theme.colors.grey600}
+          placeholderTextColor={theme.colors.grey700}
           style={chatsTopStyles.textInput}
           contentStyle={chatsTopStyles.textInputContent}
         />

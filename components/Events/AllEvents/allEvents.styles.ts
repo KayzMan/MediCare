@@ -18,7 +18,7 @@ export const allEvents = StyleSheet.create({
   },
   eventItem: {
     marginBottom: theme.sizes.appMargin * 0.75,
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     borderRadius: theme.sizes.radius * 2,
     ...center_flexRow_spaceApart,
     paddingHorizontal: theme.sizes.appPadding,

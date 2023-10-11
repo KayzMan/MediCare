@@ -100,7 +100,7 @@ export default function Top() {
         <TextInput
           {...common_text_input_props}
           placeholder="Search a doctor or health issue"
-          placeholderTextColor={theme.colors.grey600}
+          placeholderTextColor={theme.colors.grey700}
           style={homeTopStyles.textInput}
           contentStyle={homeTopStyles.textInputContent}
         />

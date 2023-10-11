@@ -6,7 +6,7 @@ import { theme } from "../../theme";
 export const bottomTabsStyles = StyleSheet.create({
   tabBar: {
     flexDirection: "row",
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     height: 65,
   },
   tabItem: {

@@ -26,7 +26,7 @@ export const doctorCategoriesStyles = StyleSheet.create({
   categoryItem: {
     marginRight: theme.sizes.appMargin * 0.5,
     ...center_flexRow,
-    backgroundColor: theme.colors.silver20,
+    backgroundColor: theme.colors.ghostWhite,
     borderRadius: theme.sizes.radius * 2,
     height: theme.sizes.smallButtonHeight,
     paddingHorizontal: theme.sizes.smallButtonHPadding,
