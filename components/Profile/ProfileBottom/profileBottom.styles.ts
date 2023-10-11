@@ -21,11 +21,10 @@ export const profileBottomStyles = StyleSheet.create({
     marginBottom: theme.sizes.appMargin,
   },
   bottomItem: {
-    marginVertical: theme.sizes.appMargin * 0.5,
     ...center_flexRow_spaceApart,
     borderBottomColor: theme.colors.silver20,
     borderBottomWidth: 1,
-    paddingBottom: theme.sizes.appPadding * 0.75,
+    paddingVertical: theme.sizes.appPadding * 0.8,
   },
   bottomItemLeft: {
     ...center_flexRow,

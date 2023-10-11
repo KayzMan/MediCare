@@ -4,4 +4,5 @@ export type mainNavigationProp = {
   forgotPasswordScreen: string | undefined;
   bottomTabsScreen: string | undefined;
   sideBarScreen: string | undefined;
+  onBoardingScreen: string | undefined;
 };
