@@ -11,7 +11,7 @@ import {
 
 export const chatsTopStyles = StyleSheet.create({
   container: {
-    marginBottom: theme.sizes.appMargin * 1.2,
+    marginBottom: theme.sizes.appMargin,
   },
   title: {
     textAlign: "center",

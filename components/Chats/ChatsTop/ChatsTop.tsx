@@ -83,7 +83,7 @@ export default function ChatsTop() {
           height: isLargerThanMobileSize(theme.sizes.screenWidth)
             ? bigImageHeight
             : imageHeight,
-          left: -10,
+          left: -5,
         }}
       />
 
