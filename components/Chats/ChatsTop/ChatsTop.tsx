@@ -26,7 +26,11 @@ import {
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 
-export default function ChatsTop() {
+export default function ChatsTop({
+  optionalWidth,
+}: {
+  optionalWidth?: number;
+}) {
   const { width } = useWindowDimensions();
 
   const { width: imageWidth, height: imageHeight } = calculateImageDimension(
@@ -54,6 +58,8 @@ export default function ChatsTop() {
           marginTop: isLargeDeviceOrBigger(width)
             ? theme.sizes.appMargin * 2
             : 0,
+        },
+        optionalWidth === undefined && {
           maxWidth: theme.sizes.smallDevice,
           minWidth: isSmallDeviceOrBigger(width)
             ? isGreaterThanExtraLarge(width)
@@ -63,6 +69,9 @@ export default function ChatsTop() {
               : theme.sizes.smallDevice - 50
             : 0,
           marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
+        },
+        optionalWidth !== undefined && {
+          width: "100%",
         },
       ]}
     >

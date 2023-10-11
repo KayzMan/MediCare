@@ -4,7 +4,6 @@ import {
   DrawerContentComponentProps,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
-import { Avatar } from "react-native-elements";
 
 const Drawer = createDrawerNavigator();
 
@@ -17,6 +16,7 @@ import { allChatsStyles } from "./allChats.styles";
 
 // 👇 utilities
 import { get_drawer_mainStackOptions } from "../../../utilities/props.utility";
+import { common_iOS_web_shadow } from "../../../utilities/styles.utility";
 
 // 👇 controllers
 import { loadAllChats } from "./allChats.controller";
@@ -24,11 +24,11 @@ import { loadAllChats } from "./allChats.controller";
 // 👇 components
 import ContainerView from "../../Global/Container/ContainerView";
 import MyText from "../../Global/MyText/MyText";
+import ChatsTop from "../ChatsTop/ChatsTop";
 
 // 👇 screens
 import ChatScreen from "../ChatScreen/ChatScreen";
 import ChatItem from "./ChatItem";
-import { common_iOS_web_shadow } from "../../../utilities/styles.utility";
 
 export default function SideBarChats() {
   // 👇 custom drawer content
@@ -83,32 +83,11 @@ export default function SideBarChats() {
           <View
             style={[
               {
-                alignItems: "center",
-                justifyContent: "center",
-                alignSelf: "center",
-                marginBottom: theme.sizes.appMargin,
+                marginBottom: theme.sizes.appMargin * 0,
               },
             ]}
           >
-            <Avatar
-              source={require("../../../assets/images/a_mobile_phone_chatting_screen.png")}
-              size={"xlarge"}
-              avatarStyle={sidebarStyles.topAvatar}
-              containerStyle={sidebarStyles.topAvatarContainer}
-            />
-
-            <MyText
-              numberOfLines={1}
-              fontWeight="ubuntuMedium"
-              style={[
-                sidebarStyles.drawerItemLabel,
-                {
-                  fontSize: theme.sizes.largeFontSize * 1.2,
-                },
-              ]}
-            >
-              Chats
-            </MyText>
+            <ChatsTop optionalWidth={theme.sizes.extraSmallDevice} />
           </View>
 
           {renderDrawerItems()}
