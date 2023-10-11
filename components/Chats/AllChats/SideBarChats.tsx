@@ -100,8 +100,13 @@ export default function SideBarChats() {
     <Drawer.Navigator
       screenOptions={{
         ...get_drawer_mainStackOptions(),
-        headerShown: false,
+        // headerShown: false,
         drawerType: "permanent",
+        sceneContainerStyle: {
+          backgroundColor: "red",
+          width: theme.sizes.smallDevice - 60,
+          left: "26%",
+        },
       }}
       defaultStatus="open"
       drawerContent={drawerContent}

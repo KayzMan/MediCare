@@ -8,10 +8,10 @@ import { calculateImageDimension } from "../../utilities/styles.utility";
 
 const { width: imageWidth, height: imageHeight } = calculateImageDimension(
   368,
-  485,
+  564,
   undefined,
   undefined,
-  2800
+  1500
 );
 
 export const sidebarStyles = StyleSheet.create({
@@ -50,6 +50,5 @@ export const sidebarStyles = StyleSheet.create({
     width: imageWidth,
     height: imageHeight,
     left: 20,
-    marginBottom: theme.sizes.appMargin,
   },
 });
