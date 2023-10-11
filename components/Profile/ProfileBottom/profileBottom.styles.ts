@@ -17,14 +17,14 @@ export const profileBottomStyles = StyleSheet.create({
     minHeight: theme.sizes.screenHeight,
   },
   title: {
-    color: theme.colors.grey700,
-    marginBottom: theme.sizes.appMargin,
+    color: theme.colors.grey500,
+    marginBottom: theme.sizes.appMargin * 0.5,
   },
   bottomItem: {
     ...center_flexRow_spaceApart,
     borderBottomColor: theme.colors.silver20,
     borderBottomWidth: 1,
-    paddingVertical: theme.sizes.appPadding * 0.8,
+    paddingVertical: theme.sizes.appPadding * 0.75,
   },
   bottomItemLeft: {
     ...center_flexRow,
