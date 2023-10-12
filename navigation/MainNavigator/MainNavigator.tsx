@@ -16,6 +16,7 @@ import SignUp from "../../screens/Registration/SignUp/SignUp";
 import ForgotPassword from "../../screens/Registration/ForgotPassword/ForgotPassword";
 import BottomTabs from "../BottomTabs/BottomTabs";
 import SideBar from "../SideBar/SideBar";
+import DoctorDetail from "../../screens/Home/DoctorDetail/DoctorDetail";
 
 export default function MainNavigator() {
   return (
@@ -72,6 +73,15 @@ export default function MainNavigator() {
           options={{
             title: "Home | MediCare",
             headerTitle: "Home | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="doctorDetailScreen"
+          component={DoctorDetail}
+          options={{
+            title: "Doctor Detail | MediCare",
+            headerTitle: "Doctor Detail | MediCare",
           }}
         />
       </Stack.Navigator>

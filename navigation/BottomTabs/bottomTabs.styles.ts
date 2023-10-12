@@ -7,7 +7,7 @@ export const bottomTabsStyles = StyleSheet.create({
   tabBar: {
     flexDirection: "row",
     backgroundColor: theme.colors.ghostWhite,
-    height: 65,
+    height: 70,
   },
   tabItem: {
     alignItems: "center",

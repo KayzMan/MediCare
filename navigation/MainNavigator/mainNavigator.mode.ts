@@ -5,4 +5,5 @@ export type mainNavigationProp = {
   bottomTabsScreen: string | undefined;
   sideBarScreen: string | undefined;
   onBoardingScreen: string | undefined;
+  doctorDetailScreen: string | undefined;
 };

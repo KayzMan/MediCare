@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { StatusBar, StyleSheet, SafeAreaView, Text } from "react-native";
 import { PaperProvider, ThemeProvider } from "react-native-paper";
 import { MyGlobalContext } from "./context/MyGlobalContext";
@@ -5,6 +6,10 @@ import { useFonts } from "expo-font";
 
 // 👇 theme
 import { theme } from "./theme";
+
+// 👇 models
+import { HomeDoctorItem } from "./components/Home/Home Doctors/homeDoctors.model";
+import { iChatItem } from "./components/Chats/AllChats/allChats.model";
 
 // 👇 navigators
 import MainNavigator from "./navigation/MainNavigator/MainNavigator";
@@ -21,10 +26,23 @@ export default function App() {
     ubuntuBoldItalic: require("./assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf"),
   });
 
+  const [selectedDoctor, setSelectedDoctor] = useState<HomeDoctorItem | null>(
+    null
+  );
+  const [selectedChat, setSelectedChat] = useState<iChatItem | null>(null);
+
   return (
     <PaperProvider theme={theme}>
       <ThemeProvider theme={theme}>
-        <MyGlobalContext.Provider value={{ Ubuntu_FontLoaded }}>
+        <MyGlobalContext.Provider
+          value={{
+            Ubuntu_FontLoaded,
+            selectedDoctor,
+            setSelectedDoctor,
+            selectedChat,
+            setSelectedChat,
+          }}
+        >
           <SafeAreaView style={styles.container}>
             <StatusBar
               barStyle={"dark-content"}

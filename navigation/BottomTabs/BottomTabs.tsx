@@ -45,6 +45,7 @@ export default function BottomTabs() {
           <MaterialIcons
             {...common_icon_props}
             name={focused ? "chat-bubble" : "chat-bubble-outline"}
+            color={focused ? theme.colors.primary : theme.colors.grey600}
             size={iconSize}
             style={[
               bottomTabsStyles.tabIcon,
@@ -64,6 +65,7 @@ export default function BottomTabs() {
         {...common_icon_props}
         name={name}
         size={iconSize}
+        color={focused ? theme.colors.primary : theme.colors.grey600}
         style={[
           bottomTabsStyles.tabIcon,
           focused && { backgroundColor: theme.colors.primary_faded },
