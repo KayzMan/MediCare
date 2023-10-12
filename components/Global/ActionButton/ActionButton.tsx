@@ -36,7 +36,7 @@ export default function ActionButton({
         },
         style,
       ]}
-      rippleColor={rippleColor ?? theme.colors.ghostWhite}
+      rippleColor={rippleColor ?? theme.colors.ghostWhite20}
       {...props}
     >
       <MyText
