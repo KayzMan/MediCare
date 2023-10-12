@@ -19,6 +19,7 @@ export const allChatsStyles = StyleSheet.create({
     backgroundColor: theme.colors.ghostWhite,
     borderRadius: theme.sizes.radius * 2.5,
     padding: theme.sizes.appPadding * 0.6,
+    paddingVertical: theme.sizes.appMargin * 0.8,
     ...center_flexRow_spaceApart,
   },
   chatItemLeft: {
@@ -32,19 +33,19 @@ export const allChatsStyles = StyleSheet.create({
     backgroundColor: theme.colors.green500,
     borderRadius: theme.sizes.radius * 1000,
     position: "absolute",
-    bottom: 6,
-    right: 5,
+    bottom: 2,
+    right: 4,
   },
   chatItemLeftDetail: {
     marginLeft: theme.sizes.appMargin * 0.5,
   },
   chatItemName: {
     marginBottom: theme.sizes.appMargin * 0.25,
-    fontSize: theme.sizes.smallFontSize + 1.2,
+    fontSize: theme.sizes.smallFontSize + 0.5,
   },
   chatItemMessage: {
     color: theme.colors.grey700,
-    fontSize: theme.sizes.smallFontSize - 1.2,
+    fontSize: theme.sizes.smallFontSize - 2,
   },
   chatItemRight: {
     alignItems: "center",

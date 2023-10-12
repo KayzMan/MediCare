@@ -2,8 +2,8 @@ import { useGlobalContext } from "../../../context/MyGlobalContext";
 import { View } from "react-native";
 import React from "react";
 import { Avatar } from "react-native-elements";
-import { TouchableRipple } from "react-native-paper";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
+import Animated, { Layout, LightSpeedInLeft } from "react-native-reanimated";
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -31,10 +31,11 @@ export default function ChatItem({
   const { setSelectedChat } = useGlobalContext();
 
   return (
-    <TouchableRipple
+    <Animated.View
       style={[allChatsStyles.chatItem]}
-      rippleColor={theme.colors.primary_faded}
-      onPress={() => {
+      layout={Layout.delay(200)}
+      entering={LightSpeedInLeft.delay(100 * id)}
+      onTouchEnd={() => {
         setSelectedChat({ id, name, avatar });
         navigation.navigate("chatInboxScreen");
       }}
@@ -45,7 +46,7 @@ export default function ChatItem({
           <View style={allChatsStyles.chatItemAvatarWrapper}>
             <Avatar
               source={avatar}
-              size={isOnSideBar ? "medium" : "large"}
+              size={isOnSideBar ? "medium" : "medium"}
               rounded
             />
             <View style={allChatsStyles.chatItemAvatarBadge} />
@@ -87,6 +88,6 @@ export default function ChatItem({
           )}
         </View>
       </>
-    </TouchableRipple>
+    </Animated.View>
   );
 }
