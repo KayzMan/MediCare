@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../../../context/MyGlobalContext";
 import React from "react";
 import { useWindowDimensions } from "react-native";
-import { ButtonProps, Button } from "react-native-paper";
+import { ButtonProps, TouchableRipple } from "react-native-paper";
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -11,6 +11,9 @@ import { actionButtonStyles } from "./actionButton.styles";
 
 // 👇 utilities
 import { isExtraExtraSmallDevice } from "../../../utilities/styles.utility";
+
+// 👇 components
+import MyText from "../MyText/MyText";
 
 export default function ActionButton({
   children,
@@ -23,7 +26,7 @@ export default function ActionButton({
   const { width } = useWindowDimensions();
 
   return (
-    <Button
+    <TouchableRipple
       style={[
         actionButtonStyles.button,
         {
@@ -33,17 +36,20 @@ export default function ActionButton({
         },
         style,
       ]}
-      labelStyle={[
-        actionButtonStyles.buttonText,
-        Ubuntu_FontLoaded && {
-          fontFamily: theme.font.ubuntuMedium,
-        },
-        labelStyle,
-      ]}
-      rippleColor={rippleColor ?? theme.colors.primary_faded}
+      rippleColor={rippleColor ?? theme.colors.ghostWhite}
       {...props}
     >
-      {children}
-    </Button>
+      <MyText
+        style={[
+          actionButtonStyles.buttonText,
+          Ubuntu_FontLoaded && {
+            fontFamily: theme.font.ubuntuMedium,
+          },
+          labelStyle,
+        ]}
+      >
+        {children}
+      </MyText>
+    </TouchableRipple>
   );
 }

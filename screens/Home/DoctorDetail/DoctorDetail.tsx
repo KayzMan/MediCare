@@ -9,7 +9,6 @@ import { doctorDetailStyles } from "./doctorDetail.styles";
 
 // utilities
 import {
-  isExtraExtraSmallDevice,
   isGreaterThanExtraLarge,
   isLargeDeviceOrBigger,
   isSmallDeviceOrBigger,
