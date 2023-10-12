@@ -1,5 +1,7 @@
-import { View } from "react-native";
-import React from "react";
+import { View, useWindowDimensions } from "react-native";
+import React, { useState } from "react";
+
+// TODO: i am actually lazy to do the correct implementation of using a FlatList or FlashList 😃😃
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -7,12 +9,40 @@ import { theme } from "../../../theme";
 // 👇 styles
 import { openSlotsStyles } from "./openSlots.styles";
 
+// 👇 utilities
+import {
+  isGreaterThanExtraLarge,
+  isLargeDeviceOrBigger,
+  isSmallDeviceOrBigger,
+} from "../../../utilities/styles.utility";
+
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 
 export default function OpenSlots() {
+  const { width } = useWindowDimensions();
+  const [currentSlot, setCurrentSlot] = useState("10:10 am");
+
   return (
-    <View style={openSlotsStyles.container}>
+    <View
+      style={[
+        openSlotsStyles.container,
+        {
+          marginTop: isLargeDeviceOrBigger(width)
+            ? theme.sizes.appMargin * 2
+            : 0,
+          maxWidth: theme.sizes.smallDevice,
+          minWidth: isSmallDeviceOrBigger(width)
+            ? isGreaterThanExtraLarge(width)
+              ? theme.sizes.mediumDevice
+              : isLargeDeviceOrBigger(width)
+              ? theme.sizes.smallDevice
+              : theme.sizes.smallDevice - 50
+            : 0,
+          marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
+        },
+      ]}
+    >
       {/* 👇 title */}
       <MyText fontWeight="ubuntuBold" style={openSlotsStyles.title}>
         Morning Slots
@@ -22,20 +52,44 @@ export default function OpenSlots() {
         <View
           style={[
             openSlotsStyles.slotItem,
-            { backgroundColor: theme.colors.primary },
+            currentSlot === "10:10 am" && {
+              backgroundColor: theme.colors.primary,
+            },
           ]}
         >
           <MyText
             style={[
               openSlotsStyles.slotItemText,
-              { color: theme.colors.white },
+              currentSlot === "10:10 am" && { color: theme.colors.white },
             ]}
+            onPress={() => {
+              setCurrentSlot("10:10 am");
+            }}
           >
             10:10 am
           </MyText>
         </View>
-        <View style={openSlotsStyles.slotItem}>
-          <MyText style={openSlotsStyles.slotItemText}>10:30 am</MyText>
+        <View
+          style={[
+            openSlotsStyles.slotItem,
+            currentSlot === "10:30 am" && {
+              backgroundColor: theme.colors.primary,
+            },
+          ]}
+        >
+          <MyText
+            style={[
+              openSlotsStyles.slotItemText,
+              currentSlot === "10:30 am" && {
+                color: theme.colors.white,
+              },
+            ]}
+            onPress={() => {
+              setCurrentSlot("10:30 am");
+            }}
+          >
+            10:30 am
+          </MyText>
         </View>
         <View style={openSlotsStyles.slotItem}>
           <MyText style={openSlotsStyles.slotItemText}>10:50 am</MyText>

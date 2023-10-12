@@ -8,7 +8,12 @@ import { theme } from "../../../theme";
 import { makeAppointmentStyles } from "./makeAppointment.styles";
 
 // 👇 utilities
-import { isExtraExtraSmallDevice } from "../../../utilities/styles.utility";
+import {
+  isExtraExtraSmallDevice,
+  isGreaterThanExtraLarge,
+  isLargeDeviceOrBigger,
+  isSmallDeviceOrBigger,
+} from "../../../utilities/styles.utility";
 
 // 👇 components
 import TopBar from "../../../components/MakeAppointment/TopBar/TopBar";
@@ -30,6 +35,15 @@ export default function MakeAppointment() {
             bottom: 20,
             left: isExtraExtraSmallDevice(width) ? 10 : 20,
             right: isExtraExtraSmallDevice(width) ? 10 : 20,
+            maxWidth: theme.sizes.smallDevice,
+            minWidth: isSmallDeviceOrBigger(width)
+              ? isGreaterThanExtraLarge(width)
+                ? theme.sizes.extraSmallDevice
+                : isLargeDeviceOrBigger(width)
+                ? theme.sizes.extraSmallDevice
+                : theme.sizes.smallDevice - 50
+              : 0,
+            marginHorizontal: isSmallDeviceOrBigger(width) ? "auto" : 0,
           }}
         >
           Confirm Appointment
