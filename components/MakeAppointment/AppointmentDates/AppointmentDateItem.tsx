@@ -56,7 +56,7 @@ export default function AppointmentDateItem({
       layout={Layout.delay(200)}
     >
       <MyText
-        fontWeight="ubuntuMedium"
+        fontWeight="ubuntuBold"
         style={[
           appointmentDatesStyles.dateItemDay,
           item.selected && { color: theme.colors.white },
