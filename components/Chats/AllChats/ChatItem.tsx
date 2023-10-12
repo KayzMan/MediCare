@@ -33,7 +33,7 @@ export default function ChatItem({
   return (
     <Animated.View
       style={[allChatsStyles.chatItem]}
-      layout={Layout.delay(200)}
+      layout={Layout.delay(100)}
       entering={LightSpeedInLeft.delay(100 * id)}
       onTouchEnd={() => {
         setSelectedChat({ id, name, avatar });
