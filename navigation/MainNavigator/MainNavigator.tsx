@@ -18,6 +18,7 @@ import BottomTabs from "../BottomTabs/BottomTabs";
 import SideBar from "../SideBar/SideBar";
 import DoctorDetail from "../../screens/Home/DoctorDetail/DoctorDetail";
 import MakeAppointment from "../../screens/Home/MakeAppointment/MakeAppointment";
+import ChatInbox from "../../screens/Chats/ChatInbox/ChatInbox";
 
 export default function MainNavigator() {
   return (
@@ -74,6 +75,15 @@ export default function MainNavigator() {
           options={{
             title: "Home | MediCare",
             headerTitle: "Home | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="chatInboxScreen"
+          component={ChatInbox}
+          options={{
+            title: "Chat Screen | MediCare",
+            headerTitle: "Chat Screen | MediCare",
           }}
         />
 

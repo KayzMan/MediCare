@@ -9,7 +9,7 @@ import { theme } from "./theme";
 
 // 👇 models
 import { HomeDoctorItem } from "./components/Home/Home Doctors/homeDoctors.model";
-import { iChatItem } from "./components/Chats/AllChats/allChats.model";
+import { iSelectedChatItem } from "./components/Chats/AllChats/allChats.model";
 
 // 👇 navigators
 import MainNavigator from "./navigation/MainNavigator/MainNavigator";
@@ -29,7 +29,9 @@ export default function App() {
   const [selectedDoctor, setSelectedDoctor] = useState<HomeDoctorItem | null>(
     null
   );
-  const [selectedChat, setSelectedChat] = useState<iChatItem | null>(null);
+  const [selectedChat, setSelectedChat] = useState<iSelectedChatItem | null>(
+    null
+  );
 
   return (
     <PaperProvider theme={theme}>

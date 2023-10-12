@@ -1,7 +1,8 @@
+import { useGlobalContext } from "../../../context/MyGlobalContext";
 import { View, useWindowDimensions } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { TouchableRipple } from "react-native-paper";
 
 // 👇 theme
@@ -18,9 +19,13 @@ import {
   isSmallDeviceOrBigger,
 } from "../../../utilities/styles.utility";
 
+// 👇 models
+import { mainNavigationProp } from "../../../navigation/MainNavigator/mainNavigator.mode";
+
 export default function TopBar() {
+  const { setSelectedChat, selectedDoctor } = useGlobalContext();
   const { width } = useWindowDimensions();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<mainNavigationProp>>();
 
   return (
     <View
@@ -62,7 +67,16 @@ export default function TopBar() {
         <TouchableRipple
           style={topBarStyles.iconContainer}
           rippleColor={theme.colors.primary_faded}
-          onPress={() => {}}
+          onPress={() => {
+            if (selectedDoctor) {
+              setSelectedChat({
+                id: selectedDoctor.id,
+                avatar: selectedDoctor?.avatar,
+                name: selectedDoctor?.name,
+              });
+              navigation.navigate("chatInboxScreen");
+            }
+          }}
         >
           <MaterialCommunityIcons
             {...common_icon_props}

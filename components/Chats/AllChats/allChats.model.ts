@@ -13,3 +13,9 @@ export interface iChatItem {
 export interface iChatItemProps {
   item: iChatItem;
 }
+
+export interface iSelectedChatItem {
+  id: number;
+  avatar: ImageSourcePropType;
+  name: string;
+}

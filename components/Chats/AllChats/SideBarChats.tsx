@@ -27,7 +27,7 @@ import MyText from "../../Global/MyText/MyText";
 import ChatsTop from "../ChatsTop/ChatsTop";
 
 // 👇 screens
-import ChatScreen from "../ChatScreen/ChatScreen";
+import ChatInbox from "../../../screens/Chats/ChatInbox/ChatInbox";
 import ChatItem from "./ChatItem";
 
 export default function SideBarChats() {
@@ -115,7 +115,7 @@ export default function SideBarChats() {
         return (
           <Drawer.Screen
             name={`chatScreenDrawerScreen-#${index}`}
-            component={ChatScreen}
+            component={ChatInbox}
           />
         );
       })}

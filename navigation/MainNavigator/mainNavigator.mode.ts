@@ -7,4 +7,5 @@ export type mainNavigationProp = {
   onBoardingScreen: string | undefined;
   doctorDetailScreen: string | undefined;
   makeAppointmentScreen: string | undefined;
+  chatInboxScreen: string | undefined;
 };
