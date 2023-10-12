@@ -17,6 +17,7 @@ import ForgotPassword from "../../screens/Registration/ForgotPassword/ForgotPass
 import BottomTabs from "../BottomTabs/BottomTabs";
 import SideBar from "../SideBar/SideBar";
 import DoctorDetail from "../../screens/Home/DoctorDetail/DoctorDetail";
+import MakeAppointment from "../../screens/Home/MakeAppointment/MakeAppointment";
 
 export default function MainNavigator() {
   return (
@@ -82,6 +83,15 @@ export default function MainNavigator() {
           options={{
             title: "Doctor Detail | MediCare",
             headerTitle: "Doctor Detail | MediCare",
+          }}
+        />
+
+        <Stack.Screen
+          name="makeAppointmentScreen"
+          component={MakeAppointment}
+          options={{
+            title: "Make Appointment | MediCare",
+            headerTitle: "Make Appointment | MediCare",
           }}
         />
       </Stack.Navigator>

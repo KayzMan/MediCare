@@ -1,5 +1,6 @@
 import { View, useWindowDimensions } from "react-native";
 import React from "react";
+import { NavigationProp } from "@react-navigation/native";
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -14,6 +15,9 @@ import {
   isSmallDeviceOrBigger,
 } from "../../../utilities/styles.utility";
 
+// 👇 models
+import { mainNavigationProp } from "../../../navigation/MainNavigator/mainNavigator.mode";
+
 // 👇 components
 import ContainerView from "../../../components/Global/Container/ContainerView";
 import TopBar from "../../../components/DoctorDetail/TopBar/TopBar";
@@ -21,7 +25,11 @@ import TopDetail from "../../../components/DoctorDetail/TopDetail/TopDetail";
 import DoctorBottom from "../../../components/DoctorDetail/DoctorBottom/DoctorBottom";
 import ActionButton from "../../../components/Global/ActionButton/ActionButton";
 
-export default function DoctorDetail() {
+export default function DoctorDetail({
+  navigation,
+}: {
+  navigation: NavigationProp<mainNavigationProp>;
+}) {
   const { width } = useWindowDimensions();
 
   return (
@@ -32,7 +40,9 @@ export default function DoctorDetail() {
         <DoctorBottom />
 
         <ActionButton
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("makeAppointmentScreen");
+          }}
           style={{
             maxWidth: theme.sizes.smallDevice,
             minWidth: isSmallDeviceOrBigger(width)

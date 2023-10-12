@@ -6,4 +6,5 @@ export type mainNavigationProp = {
   sideBarScreen: string | undefined;
   onBoardingScreen: string | undefined;
   doctorDetailScreen: string | undefined;
+  makeAppointmentScreen: string | undefined;
 };
