@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { TouchableOpacity } from "react-native";
 import Animated, {
-  Extrapolate,
   FadeIn,
   Layout,
-  interpolate,
   useAnimatedStyle,
   useDerivedValue,
+  withSpring,
+  withTiming,
 } from "react-native-reanimated";
 const AnimatedTouchableOpacity =
   Animated.createAnimatedComponent(TouchableOpacity);
@@ -28,9 +28,9 @@ export default function AppointmentDateItem({
   handleAppointmentDateClicked,
 }: iAppointmentDateItemProps) {
   const initialMode = useRef<boolean>(true);
-  const selected = useDerivedValue(() => {
-    return item.selected ? 1 : 0;
-  }, []);
+  const scale = useDerivedValue(() => {
+    return item.selected ? withSpring(1) : withSpring(0.9);
+  });
 
   // 👇 component did mount.
   useEffect(() => {
@@ -38,15 +38,8 @@ export default function AppointmentDateItem({
   }, []);
 
   const reanimatedStyles = useAnimatedStyle(() => {
-    const scale = interpolate(
-      selected.value,
-      [0, 1, 0],
-      [0.9, 1, 0.9],
-      Extrapolate.CLAMP
-    );
-
     return {
-      transform: [{ scale }],
+      transform: [{ scale: scale.value }],
     };
   });
 

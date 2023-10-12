@@ -10,12 +10,11 @@ export const loadAppointmentDates = (): iAppointmentDateItem[] => {
     ...weekDays,
     ...weekDays,
     ...weekDays,
-    ...weekDays,
   ].map((weekDay, index) => ({
     id: index + 1,
     day: weekDay,
     date: (index + 1).toString().padStart(2, "0"),
-    selected: index === 2,
+    selected: index === 0,
   }));
 
   return dates;

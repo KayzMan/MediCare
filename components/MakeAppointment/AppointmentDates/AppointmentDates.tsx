@@ -1,4 +1,4 @@
-import { ListRenderItem, View, useWindowDimensions } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import React, { useCallback, useState } from "react";
 import { FlashList } from "@shopify/flash-list";
 

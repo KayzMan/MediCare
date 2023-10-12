@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import Animated from "react-native-reanimated";
 
 export interface iAppointmentDateItem {
   id: number;
