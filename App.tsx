@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatusBar, StyleSheet, SafeAreaView, Text } from "react-native";
+import { StatusBar, StyleSheet, SafeAreaView } from "react-native";
 import { PaperProvider, ThemeProvider } from "react-native-paper";
 import { MyGlobalContext } from "./context/MyGlobalContext";
 import { useFonts } from "expo-font";
