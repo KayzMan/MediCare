@@ -14,11 +14,10 @@ export const appointmentDatesStyles = StyleSheet.create({
     borderRadius: theme.sizes.radius,
     ...center_flexRow_justifyCenter,
     flexDirection: "column",
-    width: 45,
-    height: 70,
   },
   dateItemDay: {
     marginBottom: theme.sizes.appMargin * 0.5,
+    letterSpacing: 1.8,
   },
   dateItemDate: {},
 });

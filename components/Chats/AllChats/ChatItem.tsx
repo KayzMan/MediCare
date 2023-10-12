@@ -4,6 +4,8 @@ import React from "react";
 import { Avatar } from "react-native-elements";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import Animated, { Layout, LightSpeedInLeft } from "react-native-reanimated";
+const AnimatedTouchableOpacity =
+  Animated.createAnimatedComponent(TouchableOpacity);
 
 // 👇 theme
 import { theme } from "../../../theme";
@@ -17,6 +19,10 @@ import MyText from "../../Global/MyText/MyText";
 // 👇 models
 import { iChatItem } from "./allChats.model";
 import { mainNavigationProp } from "../../../navigation/MainNavigator/mainNavigator.mode";
+import {
+  GestureHandlerRootView,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 
 export default function ChatItem({
   avatar,
@@ -31,63 +37,66 @@ export default function ChatItem({
   const { setSelectedChat } = useGlobalContext();
 
   return (
-    <Animated.View
-      style={[allChatsStyles.chatItem]}
-      layout={Layout.delay(100)}
-      entering={LightSpeedInLeft.delay(100 * id)}
-      onTouchEnd={() => {
-        setSelectedChat({ id, name, avatar });
-        navigation.navigate("chatInboxScreen");
-      }}
-    >
-      <>
-        {/* 👇 left */}
-        <View style={allChatsStyles.chatItemLeft}>
-          <View style={allChatsStyles.chatItemAvatarWrapper}>
-            <Avatar
-              source={avatar}
-              size={isOnSideBar ? "medium" : "medium"}
-              rounded
-            />
-            <View style={allChatsStyles.chatItemAvatarBadge} />
-          </View>
+    <GestureHandlerRootView>
+      <AnimatedTouchableOpacity
+        activeOpacity={theme.sizes.touchableOpacity_high}
+        style={[allChatsStyles.chatItem]}
+        layout={Layout.delay(10)}
+        entering={LightSpeedInLeft.delay(100 * id)}
+        onPress={() => {
+          setSelectedChat({ id, name, avatar });
+          navigation.navigate("chatInboxScreen");
+        }}
+      >
+        <>
+          {/* 👇 left */}
+          <View style={allChatsStyles.chatItemLeft}>
+            <View style={allChatsStyles.chatItemAvatarWrapper}>
+              <Avatar
+                source={avatar}
+                size={isOnSideBar ? "medium" : "medium"}
+                rounded
+              />
+              <View style={allChatsStyles.chatItemAvatarBadge} />
+            </View>
 
-          <View style={allChatsStyles.chatItemLeftDetail}>
-            <MyText
-              fontWeight="ubuntuMedium"
-              style={allChatsStyles.chatItemName}
-            >
-              {name || "name"}
-            </MyText>
-            <MyText
-              fontWeight={
-                unReadMessages !== undefined ? "ubuntuMedium" : "ubuntu"
-              }
-              style={[
-                allChatsStyles.chatItemMessage,
-                unReadMessages !== undefined && { color: theme.colors.black },
-              ]}
-            >
-              {message || "message"}
-            </MyText>
-          </View>
-        </View>
-
-        {/* 👇 right */}
-        <View style={allChatsStyles.chatItemRight}>
-          <MyText style={allChatsStyles.chatItemTime}>
-            {lastMessageTime || "00:00"}
-          </MyText>
-
-          {unReadMessages && (
-            <View style={allChatsStyles.chatItemLastMessagesWrapper}>
-              <MyText style={allChatsStyles.chatItemLastMessagesCount}>
-                {unReadMessages || "0"}
+            <View style={allChatsStyles.chatItemLeftDetail}>
+              <MyText
+                fontWeight="ubuntuMedium"
+                style={allChatsStyles.chatItemName}
+              >
+                {name || "name"}
+              </MyText>
+              <MyText
+                fontWeight={
+                  unReadMessages !== undefined ? "ubuntuMedium" : "ubuntu"
+                }
+                style={[
+                  allChatsStyles.chatItemMessage,
+                  unReadMessages !== undefined && { color: theme.colors.black },
+                ]}
+              >
+                {message || "message"}
               </MyText>
             </View>
-          )}
-        </View>
-      </>
-    </Animated.View>
+          </View>
+
+          {/* 👇 right */}
+          <View style={allChatsStyles.chatItemRight}>
+            <MyText style={allChatsStyles.chatItemTime}>
+              {lastMessageTime || "00:00"}
+            </MyText>
+
+            {unReadMessages && (
+              <View style={allChatsStyles.chatItemLastMessagesWrapper}>
+                <MyText style={allChatsStyles.chatItemLastMessagesCount}>
+                  {unReadMessages || "0"}
+                </MyText>
+              </View>
+            )}
+          </View>
+        </>
+      </AnimatedTouchableOpacity>
+    </GestureHandlerRootView>
   );
 }

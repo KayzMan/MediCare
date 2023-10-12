@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, useWindowDimensions } from "react-native";
 import Animated, {
   FadeIn,
   Layout,
   useAnimatedStyle,
   useDerivedValue,
   withSpring,
-  withTiming,
 } from "react-native-reanimated";
 const AnimatedTouchableOpacity =
   Animated.createAnimatedComponent(TouchableOpacity);
@@ -20,6 +19,9 @@ import { appointmentDatesStyles } from "./appointmentDates.styles";
 // 👇 models
 import { iAppointmentDateItemProps } from "./appointmentDates.model";
 
+// 👇 utilities
+import { isLargerThanMobileSize } from "../../../utilities/styles.utility";
+
 // 👇 components
 import MyText from "../../Global/MyText/MyText";
 
@@ -27,6 +29,8 @@ export default function AppointmentDateItem({
   item,
   handleAppointmentDateClicked,
 }: iAppointmentDateItemProps) {
+  const { width } = useWindowDimensions();
+
   const initialMode = useRef<boolean>(true);
   const scale = useDerivedValue(() => {
     return item.selected ? withSpring(1) : withSpring(0.9);
@@ -48,6 +52,10 @@ export default function AppointmentDateItem({
       style={[
         appointmentDatesStyles.dateItem,
         item.selected && { backgroundColor: theme.colors.primary },
+        {
+          width: isLargerThanMobileSize(width) ? 55 : 45,
+          height: isLargerThanMobileSize(width) ? 70 : 70,
+        },
         reanimatedStyles,
       ]}
       activeOpacity={theme.sizes.touchableOpacity_high}
@@ -56,7 +64,7 @@ export default function AppointmentDateItem({
       layout={Layout.delay(200)}
     >
       <MyText
-        fontWeight="ubuntuBold"
+        fontWeight="ubuntuMedium"
         style={[
           appointmentDatesStyles.dateItemDay,
           item.selected && { color: theme.colors.white },
